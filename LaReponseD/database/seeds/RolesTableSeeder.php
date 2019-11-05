@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Seeder;
 
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+
 class RolesTableSeeder extends Seeder
 {
     /**
@@ -11,8 +14,8 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
-        $role = Role::create(['name' => 'Administrator']);
-        $role = Role::create(['name' => 'Moderator']);
+        $role = Role::create(['name' => 'Admin']);
+        $role = Role::create(['name' => 'Modo']);
         $role = Role::create(['name' => 'User']);
     }
 }
