@@ -15,6 +15,15 @@
                     @endif
 
                     You are logged in!
+                    @hasrole("Admin")
+                        <p>Hello you administrator</p>
+                    @endhasrole
+                    @hasrole("Modo")
+                        <p>Hello you moderator</p>
+                    @endhasrole
+                    @hasrole("User")
+                        <p>Hello you only user</p>
+                    @endhasrole
                 </div>
             </div>
         </div>
