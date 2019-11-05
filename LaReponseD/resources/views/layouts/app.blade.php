@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="icon" type="image/png" href="../../../public/img/aled.jpg" />
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -55,12 +56,38 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    @hasrole('Administrator')
+                                    <a class="dropdown-item" href="{{ route('index') }}"
+                                       onclick="event.preventDefault();
+                                            document.getElementById('index-form').submit();">
+                                        {{ __('All Profiles') }}
+                                    </a>
+                                    <form id="index-form" action="{{ route('index') }}" method="GET" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    @endhasrole
+                                    <a class="dropdown-item" href="{{ route('show') }}"
+                                       onclick="event.preventDefault();
+                                            document.getElementById('show-form').submit();">
+                                        {{ __('Profile') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('edit') }}"
+                                       onclick="event.preventDefault();
+                                            document.getElementById('edit-form').submit();">
+                                        {{ __('Edit Profile') }}
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                            document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
+                                    
+                                    <form id="show-form" action="{{ route('show') }}" method="GET" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    <form id="edit-form" action="{{ route('edit') }}" method="EDIT" style="display: none;">
+                                        @csrf
+                                    </form>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
@@ -72,7 +99,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="container py-4">
             @yield('content')
         </main>
     </div>

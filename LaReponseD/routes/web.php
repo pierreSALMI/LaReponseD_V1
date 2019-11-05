@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/show', 'ProfileController@show')->middleware('auth')->name('show');
+Route::get('/edit', 'ProfileController@edit')->middleware('auth')->name('edit');
