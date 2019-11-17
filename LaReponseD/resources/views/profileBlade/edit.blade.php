@@ -23,12 +23,12 @@
                 <div class="form-group">
 
                     <label for="firstName">Prénom :</label>
-                    <input type="text" class="form-control" name="firstname" value="{{ $profile->firstname }}" />
+                    <input type="text" class="form-control" name="firstname" value="{{ $profile->firstName }}" />
                 </div>
 
                 <div class="form-group">
                     <label for="lastName">Nom :</label>
-                    <input type="text" class="form-control" name="lastname" value="{{ $profile->lastname }}" />
+                    <input type="text" class="form-control" name="lastname" value="{{ $profile->lastName }}" />
                 </div>
 
                 <div class="form-group">

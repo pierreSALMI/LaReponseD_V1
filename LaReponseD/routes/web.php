@@ -19,5 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('profile', 'ProfileController');
+
 Route::get('/show', 'ProfileController@show')->middleware('auth')->name('show');
 Route::get('/edit', 'ProfileController@edit')->middleware('auth')->name('edit');
