@@ -58,9 +58,11 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        $id = Auth::user()->id;
+        $profile = Profile::where('id', $id)->first();
+        return view('profileBlade.edit', ['profile' => $profile]);
     }
 
     /**
@@ -72,7 +74,23 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'firstname'=>'required|string',
+            'lastname'=>'required|string',
+            'birthDate'=>'required|string',
+            'telNbr'=>'required|string',
+            'address'=>'required|string',
+        ]);
+
+        $profile = Profile::find($id);
+        $profile->firstname = $request->get('firstname');
+        $profile->lastname = $request->get('lastname');
+        $profile->birthDate = $request->get('birthDate');
+        $profile->telNbr = $request->get('telNbr');
+        $profile->address = $request->get('address');
+        $profile->save();
+
+        return redirect('/show')->with('success', 'Contact updated!');
     }
 
     /**
