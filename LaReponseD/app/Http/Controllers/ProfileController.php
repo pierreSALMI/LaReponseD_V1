@@ -52,6 +52,12 @@ class ProfileController extends Controller
         return view('profileBlade.show', ['profile' => $profile]);
     }
 
+    public function show2()
+    {
+        $profile = Profile::where('id', $id)->first();
+        return view('profile.show', ['profile' => $profile]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -90,7 +96,7 @@ class ProfileController extends Controller
         $profile->address = $request->get('address');
         $profile->save();
 
-        return redirect('/show')->with('success', 'Contact updated!');
+        return redirect('/show')->with('success', 'Profil mis à jour!');
     }
 
     /**
