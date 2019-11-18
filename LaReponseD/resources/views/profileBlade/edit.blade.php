@@ -33,11 +33,11 @@
 
                 <div class="form-group">
                     <label for="birthDate">Date de naissance :</label>
-                    <input type="text" class="form-control" name="birthDate" value="{{ $profile->birthDate }}" />
+                    <input type="date" class="form-control" name="birthDate" value="{{ $profile->birthDate }}" />
                 </div>
                 <div class="form-group">
                     <label for="telNbr">Téléphone :</label>
-                    <input type="text" class="form-control" name="telNbr" value="{{ $profile->telNbr }}" />
+                    <input type="tel" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" class="form-control" name="telNbr" value="{{ $profile->telNbr }}" />
                 </div>
                 <div class="form-group">
                     <label for="address">Adresse :</label>
