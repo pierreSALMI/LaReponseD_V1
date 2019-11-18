@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afbed935-ac57-41e6-a835-ae6e98a2387c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/quizBlade/quiz.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuizzController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Quizz.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/QuizzFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_18_132423_create_quizzs_table.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -192,7 +189,8 @@
       <workItem from="1573775298813" duration="50000" />
       <workItem from="1573844519991" duration="1709000" />
       <workItem from="1573985144459" duration="6504000" />
-      <workItem from="1574083285819" duration="2519000" />
+      <workItem from="1574083285819" duration="2590000" />
+      <workItem from="1574086659913" duration="1061000" />
     </task>
     <servers />
   </component>

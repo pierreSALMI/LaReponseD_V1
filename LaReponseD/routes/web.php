@@ -25,3 +25,6 @@ Route::get('/profiles', 'ProfileController@index')->name('index')->middleware('a
 
 Route::get('/profile', 'ProfileController@show2')->middleware('auth','role:Admin')->name('show');
 Route::get('/edit', 'ProfileController@edit')->middleware('auth')->name('edit');
+
+
+Route::get('/quiz', 'QuizController@index')->name('quiz');
