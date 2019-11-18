@@ -41,6 +41,7 @@
   </div>
   
   {{ $profiles->links() }}
+  
 
 <div>
 @endsection

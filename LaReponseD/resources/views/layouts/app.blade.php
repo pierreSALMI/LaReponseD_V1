@@ -56,12 +56,12 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     @hasrole('Admin')
-                                    <a class="dropdown-item" href="{{ route('shows') }}"
+                                    <a class="dropdown-item" href="{{ route('index') }}"
                                        onclick="event.preventDefault();
                                             document.getElementById('index-form').submit();">
                                         {{ __('All Profiles') }}
                                     </a>
-                                    <form id="index-form" action="{{ route('shows') }}" method="GET" style="display: none;">
+                                    <form id="index-form" action="{{ route('index') }}" method="GET" style="display: none;">
                                         @csrf
                                     </form>
                                     @endhasrole

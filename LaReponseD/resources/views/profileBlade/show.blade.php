@@ -31,6 +31,16 @@
           <td>{{$profile->birthDate}}</td>
           <td>{{$profile->telNbr}}</td>
           <td>{{$profile->address}}</td>
+          <td>
+            <a class="dropdown-item" href="{{ route('edit') }}"
+              onclick="event.preventDefault();
+                document.getElementById('edit-form').submit();">
+              {{ __('Edit Profile') }}
+            </a>
+            <form id="edit-form" action="{{ route('edit') }}" method="GET" style="display: none;">
+              @csrf
+            </form>
+          </td>
         </tr>
     </tbody>
   </table>

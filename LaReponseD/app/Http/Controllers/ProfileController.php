@@ -15,7 +15,8 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+        $profiles = Profile::paginate(15);
+        return view('profileBlade.index', compact('profiles'));
     }
 
     /**
@@ -52,10 +53,10 @@ class ProfileController extends Controller
         return view('profileBlade.show', ['profile' => $profile]);
     }
 
-    public function show2()
+    public function show2($id)
     {
         $profile = Profile::where('id', $id)->first();
-        return view('profile.show', ['profile' => $profile]);
+        return view('profileBlade.shows', ['profile' => $profile]);
     }
 
     /**
