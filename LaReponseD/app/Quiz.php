@@ -12,4 +12,14 @@ class Quiz extends Model
     public function user() {
         return $this->hasOne('App\User');
     }
+
+    protected $fillable = [
+        'titre',
+        'theme',
+        'Q1',
+        'Q2',
+        'Q3',
+        'Q4',
+        'Q5',
+    ]
 }
