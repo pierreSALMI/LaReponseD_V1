@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Quiz;
 use Illuminate\Http\Request;
+use function Symfony\Component\HttpKernel\Tests\Controller\controller_function;
+use function Symfony\Component\HttpKernel\Tests\controller_func;
+use App\Http\Controllers\QuestionController;
 
 class QuizController extends Controller
 {
@@ -44,9 +47,12 @@ class QuizController extends Controller
      * @param  \App\Quiz  $quiz
      * @return \Illuminate\Http\Response
      */
-    public function show(Quiz $quiz)
+    public function show($id)
     {
-        //
+        $quiz = Quiz::where('id', $id)->first();
+        //$question = show_source(QuestionController::show($id));
+        $question = QuestionController::show($id);
+        return view('quizBlade.show', ['quiz' => $quiz], ['question' => $question]);
     }
 
     /**

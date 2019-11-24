@@ -44,9 +44,10 @@ class QuestionController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function show(Question $question)
+    public static function show($quiz_id)
     {
-        //
+        $question = Question::where('quiz_id', $quiz_id)->first();
+        return $question;
     }
 
     /**

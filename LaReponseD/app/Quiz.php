@@ -16,5 +16,5 @@ class Quiz extends Model
     protected $fillable = [
         'titre',
         'theme',
-    ]
+    ];
 }

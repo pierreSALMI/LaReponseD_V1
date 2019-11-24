@@ -17,5 +17,5 @@ class Choix extends Model
         'choix2',
         'choix3',
         'choix4',
-    ]
+    ];
 }

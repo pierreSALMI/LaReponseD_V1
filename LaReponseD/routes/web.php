@@ -28,3 +28,4 @@ Route::get('/edit', 'ProfileController@edit')->middleware('auth')->name('edit');
 
 
 Route::get('/quiz', 'QuizController@index')->name('quiz');
+Route::get('/quiz/show/{id}', 'QuizController@show')->name('showQuiz');
