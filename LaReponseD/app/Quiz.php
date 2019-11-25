@@ -13,8 +13,8 @@ class Quiz extends Model
         return $this->hasOne('App\User');
     }
 
-    public function question() {
-        return $this->hasMany(Question::class, 'id', 'quiz_id');     
+    public function questions() {
+        return $this->hasMany(Question::class, 'id', 'quiz_id');
     }
 
     protected $fillable = [
