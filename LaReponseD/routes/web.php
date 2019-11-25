@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('profile', 'ProfileController');
 Route::resource('quiz', 'QuizController');
+Route::resource('question', 'QuestionController');
 
 Route::get('/profiles', 'ProfileController@index')->name('index')->middleware('auth','role:Admin');
 
@@ -33,3 +34,5 @@ Route::get('/quiz/show/{id}', 'QuizController@show')->name('showQuiz');
 Route::get('quiz/edit/{id}', 'QuizController@edit')->name('editQuiz');
 
 Route::get('/quiz/createQuiz', 'QuizController@create')->name('createQuiz');
+
+Route::get('/quiz/createQuest', 'QuestionController@create')->name('createQuest');

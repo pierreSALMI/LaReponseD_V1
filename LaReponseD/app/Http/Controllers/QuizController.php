@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Question;
 use App\Quiz;
-use App\Choix;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use function Symfony\Component\HttpKernel\Tests\Controller\controller_function;
 use function Symfony\Component\HttpKernel\Tests\controller_func;
+use Illuminate\Support\Facades\Session;
 
 class QuizController extends Controller
 {
@@ -46,21 +47,13 @@ class QuizController extends Controller
 
         $newQuiz->titre = $request->titre;
         $newQuiz->theme = $request->theme;
+        $newQuiz->user_id = Auth::user()->id;
 
         $newQuiz->save();
-    
-        $validatedQuestions = $request->validate([
-            'question1' => 'required',
-        ]);
 
-        $q1 = new Question;
+        Session::put('quizId', $newQuiz->id);
 
-        $q1->question = $request->question1;
-        $q1->quiz_id = $newQuiz->id;
-
-        $q1->save();
-
-        return redirect('home')->with('success','Bien joué à toi');
+        return redirect()->route('createQuest');
     }
 
     /**

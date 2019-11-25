@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class QuestionController extends Controller
 {
@@ -25,7 +26,12 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        //
+        $value = Session::get('key');
+        $quiz = Quiz::find($value);
+
+        var_dump($quiz);
+
+        return redirect('quizBlade.createQuest', ['quiz' => $quiz]);
     }
 
     /**
@@ -36,7 +42,16 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($_POST['action'] == 'again') {
+            $value = Session::get('key');
+
+            $quiz = Quiz::find($value);
+
+            return redirect('quizBlade.createQuest', ['quiz' => $quiz]);
+
+        } else if ($_POST['action'] == 'end') {
+            return redirect()->to('/');
+        }
     }
 
     /**

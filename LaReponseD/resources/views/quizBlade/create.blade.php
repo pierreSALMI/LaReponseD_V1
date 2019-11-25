@@ -38,42 +38,6 @@
                     <option value="Internet">Internet</option>
                 </select></br></br>
 
-                <!--##############################-->
-                <!--          QUESTION 1          -->
-                <div class="form-group">
-                    <label for="name">Question 1 :</label>
-                    <input type="text" class="form-control" name="question1"/>
-                </div>
-
-                <!-- REPONSE 1 DU QUIZs -->
-                <div>
-                    <label for="name">Réponse 1 :</label>
-                    <input type="radio" id="q1r1" value="q1r1" name="quest1">
-                    <label for="q1r1"><input type="text" class="form-control" name="1rep1"/></label>
-                </div>
-
-                <!-- REPONSE 2 DU QUIZs -->
-                <div>
-                    <label for="name">Réponse 2 :</label>
-                    <input type="radio" id="q1r2" value="q1r2" name="quest1">
-                    <label for="q1r2"><input type="text" class="form-control" name="1rep2"/></label>
-                </div>
-
-                <!-- REPONSE 3 DU QUIZs -->
-                <div>
-                    <label for="name">Réponse 3 :</label>
-                    <input type="radio" id="q1r3" value="q1r3" name="quest1">
-                    <label for="q1r3"><input type="text" class="form-control" name="1rep3"/></label>
-                </div>
-
-                <!-- REPONSE 4 DU QUIZs -->
-                <div>
-                    <label for="name">Réponse 4 :</label>
-                    <input type="radio" id="q1r4" value="q1r4" name="quest1">
-                    <label for="q1r4"><input type="text" class="form-control" name="1rep4"/></label>
-                </div>
-                <!--##############################-->
-
                 <button type="submit" class="btn btn-primary">Créer</button>
             </form>
 
