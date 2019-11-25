@@ -23,5 +23,5 @@ Route::resource('profile', 'ProfileController');
 
 Route::get('/profiles', 'ProfileController@index')->name('index')->middleware('auth','role:Admin');
 
-Route::get('/profile', 'ProfileController@show2')->middleware('auth','role:Admin')->name('show');
+Route::get('/profiles/{id}', 'ProfileController@show2')->middleware('auth')->name('show');
 Route::get('/edit', 'ProfileController@edit')->middleware('auth')->name('edit');

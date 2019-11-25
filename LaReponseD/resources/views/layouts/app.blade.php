@@ -65,7 +65,12 @@
                                         @csrf
                                     </form>
                                     @endhasrole
-                                    <a class="dropdown-item" href="{{ route('show') }}"
+                                    <a class="dropdown-item" href="{{ route('home') }}"
+                                       onclick="event.preventDefault();
+                                            document.getElementById('home-form').submit();">
+                                        {{ __('Home') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ url('profiles/'.Auth::id()) }}"
                                        onclick="event.preventDefault();
                                             document.getElementById('show-form').submit();">
                                         {{ __('Profile') }}
@@ -80,8 +85,11 @@
                                             document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    
-                                    <form id="show-form" action="{{ route('show') }}" method="GET" style="display: none;">
+
+                                    <form id="home-form" action="{{ route('home') }}" method="GET" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    <form id="show-form" action="{{ url('profiles/'.Auth::id()) }}" method="GET" style="display: none;">
                                         @csrf
                                     </form>
                                     <form id="edit-form" action="{{ route('edit') }}" method="EDIT" style="display: none;">

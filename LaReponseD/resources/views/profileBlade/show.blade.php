@@ -15,7 +15,6 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>ID</td>
           <td>First Name</td>
           <td>Last Name</td>
           <td>Birth Date</td>
@@ -25,12 +24,13 @@
     </thead>
     <tbody>
         <tr>
-          <td>{{$profile->id}}</td>
           <td>{{$profile->firstName}}</td>
           <td>{{$profile->lastName}}</td>
           <td>{{$profile->birthDate}}</td>
           <td>{{$profile->telNbr}}</td>
           <td>{{$profile->address}}</td>
+
+          @if( $profile->id == Auth::id() )
           <td>
             <a class="dropdown-item" href="{{ route('edit') }}"
               onclick="event.preventDefault();
@@ -41,6 +41,7 @@
               @csrf
             </form>
           </td>
+          @endif
         </tr>
     </tbody>
   </table>

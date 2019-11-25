@@ -34,6 +34,7 @@
               <td>{{$profile->birthDate}}</td>
               <td>{{$profile->telNbr}}</td>
               <td>{{$profile->address}}</td>
+              <td><a href="{{ url('profiles/'.$profile->id) }}">Voir...</a></td>
           </tr>
           @endforeach
       </tbody>

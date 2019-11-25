@@ -46,17 +46,10 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
-    {
-        $id = Auth::user()->id;
-        $profile = Profile::where('id', $id)->first();
-        return view('profileBlade.show', ['profile' => $profile]);
-    }
-
     public function show2($id)
     {
         $profile = Profile::where('id', $id)->first();
-        return view('profileBlade.shows', ['profile' => $profile]);
+        return view('profileBlade.show', ['profile' => $profile]);
     }
 
     /**
