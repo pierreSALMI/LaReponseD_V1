@@ -53,7 +53,7 @@ class QuizController extends Controller
         $quiz = Quiz::with('questions')->find($id);
         return view('quizBlade.show', ['quiz' => $quiz]);
     }
-    
+
 
     /**
      * Show the form for editing the specified resource.
