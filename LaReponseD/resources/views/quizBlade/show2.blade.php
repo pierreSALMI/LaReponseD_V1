@@ -13,6 +13,9 @@
             </div><br />
         @endif
         
+        <h2>{{$quiz->titre}}</h2>
+
+        @foreach($questions as $question)
         <table class="table table-striped">
             <thead>
             <tr>
@@ -24,12 +27,11 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>{{$quiz->id}}</td>
-                    <td>{{$quiz->titre}}</td>
-                    <td>{{$quiz->theme}}</td>
                     <td>{{$question->id}}</td>
+                    <td>{{$question->question}}</td>
                 </tr>
             </tbody>
         </table>
+        @endforeach
         <div>
 @endsection
