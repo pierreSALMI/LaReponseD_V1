@@ -14,6 +14,7 @@
         @endif
         
         <h2>{{$quiz->titre}}</h2>
+        <p>{{$quiz->id}}</p>
 
         @foreach($questions as $question)
         <table class="table table-striped">

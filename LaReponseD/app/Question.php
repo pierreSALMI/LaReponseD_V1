@@ -12,6 +12,10 @@ class Question extends Model
         return $this->hasOne('App\Quiz');
     }
 
+    public function choix() {
+        return $this->hasMany(choix::class, 'id', 'question_id');
+    }
+
     protected $fillable = [
         'question',
     ];
