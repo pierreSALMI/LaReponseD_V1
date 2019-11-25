@@ -33,4 +33,4 @@ Route::resource('quiz', 'QuizController');
 Route::get('/quiz', 'QuizController@index')->name('quiz');
 Route::get('/quiz/show/{id}', 'QuizController@show')->name('showQuiz');
 
-Route::get('/quiz/show2/{id}', 'QuizController@show2')->name('show2Quiz');
+Route::get('quiz/edit/{id}', 'QuizController@edit')->name('editQuiz');

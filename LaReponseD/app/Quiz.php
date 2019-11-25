@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,7 +13,7 @@ class Quiz extends Model
     }
 
     public function questions() {
-        return $this->hasMany(Question::class, 'id', 'quiz_id');
+        return $this->hasMany(Question::class, 'quiz_id', 'id');
     }
 
     protected $fillable = [

@@ -12,9 +12,9 @@
                 {{ session()->get('success') }}
             </div><br />
         @endif
-        
-        <h2>{{$quiz->titre}}</h2>
-        <p>{{$quiz->id}}</p>
+
+        <h2>{{$profile->titre}}</h2>
+        <p>{{$profile->id}}</p>
 
         @foreach($questions as $question)
         <table class="table table-striped">

@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afbed935-ac57-41e6-a835-ae6e98a2387c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/quizBlade/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuizController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuizController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Question.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Quiz.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Quiz.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profileBlade/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profileBlade/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profileBlade/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profileBlade/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profileBlade/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profileBlade/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quizBlade/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quizBlade/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/quizBlade/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quizBlade/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quizBlade/show2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quizBlade/show2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +53,13 @@
         <item name="lareponsed-db@127.0.0.1" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="lareponsed-db: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="lareponsed-db@127.0.0.1" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="lareponsed-db: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="choix: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -206,7 +222,7 @@
       <workItem from="1574083285819" duration="2590000" />
       <workItem from="1574086659913" duration="8456000" />
       <workItem from="1574580209724" duration="5736000" />
-      <workItem from="1574674696930" duration="8422000" />
+      <workItem from="1574674696930" duration="15044000" />
     </task>
     <servers />
   </component>

@@ -9,10 +9,10 @@
 <div class="uper">
   @if(session()->get('success'))
     <div class="alert alert-success">
-      {{ session()->get('success') }}  
+      {{ session()->get('success') }}
     </div><br />
   @endif
-  
+
   <div class="container">
     <table class="table table-striped">
       <thead>
@@ -40,9 +40,9 @@
       </tbody>
     </table>
   </div>
-  
+
   {{ $profiles->links() }}
-  
+
 
 <div>
 @endsection

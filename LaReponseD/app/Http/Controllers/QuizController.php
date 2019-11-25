@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Question;
 use App\Quiz;
+use App\Choix;
 use Illuminate\Http\Request;
 use function Symfony\Component\HttpKernel\Tests\Controller\controller_function;
 use function Symfony\Component\HttpKernel\Tests\controller_func;
@@ -50,7 +51,7 @@ class QuizController extends Controller
     public function show($id)
     {
         //$questions = Question::where('quiz_id', $quiz_id)->get();
-        $quiz = Quiz::with('questions')->find($id);
+        $quiz = Quiz::with('questions.choix')->find($id);
         return view('quizBlade.show', ['quiz' => $quiz]);
     }
 
@@ -61,9 +62,11 @@ class QuizController extends Controller
      * @param  \App\Quiz  $quiz
      * @return \Illuminate\Http\Response
      */
-    public function edit(Quiz $quiz)
+    public function edit($id)
     {
-        //
+        //$questions = Question::where('quiz_id', $quiz_id)->get();
+        $quiz = Quiz::with('questions.choix')->find($id);
+        return view('quizBlade.edit', ['quiz' => $quiz]);
     }
 
     /**
@@ -73,9 +76,27 @@ class QuizController extends Controller
      * @param  \App\Quiz  $quiz
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Quiz $quiz)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'theme'=>'required|string',
+            'question'=>'required|string',
+            'choix_juste'=>'required|string',
+            'choix2'=>'required|string',
+            ]);
+
+        $quiz = Quiz::with('questions.choix')->find($id);
+        $quiz->theme = $request->get('theme');
+        foreach ($quiz->questions as $question) {
+            $question->question = $request->get('question');
+            $question->save();
+            $question->choix->choix_juste = $request->get('choix_juste');
+            $question->choix->choix2 = $request->get('choix2');
+            $question->choix->save();
+        }
+        $quiz->save();
+
+        return redirect('/quiz/show/'.$id)->with('success', 'Quiz mis à jour!');
     }
 
     /**
