@@ -26,9 +26,8 @@ class QuizController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create() {
+        return view(quizBlade.create);
     }
 
     /**
@@ -37,9 +36,31 @@ class QuizController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request) {
+        $validatedQuiz = $request->validate([
+            'titre' => 'required',
+            'theme' => 'required',
+        ]);
+   
+        $newQuiz = new Quiz;
+
+        $newQuiz->titre = $request->titre;
+        $newQuiz->theme = $request->theme;
+
+        $newQuiz->save();
+    
+        $validatedQuestions = $request->validate([
+            'question1' => 'required',
+        ]);
+
+        $q1 = new Question;
+
+        $q1->question = $request->question1;
+        $q1->quiz_id = $newQuiz->id;
+
+        $q1->save();
+
+        return redirect('home')->with('success','Bien joué à toi');
     }
 
     /**
