@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
             $user->assignRole($role_modo);
         });
 
-        $role_user = Role::where('name','Users')->first();
+        $role_user = Role::where('name','User')->first();
 
         factory(App\User::class, 50)->create()->each(function ($user) use ($role_user) {
             $user->assignRole($role_user);
