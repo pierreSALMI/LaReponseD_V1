@@ -12,6 +12,7 @@
                 {{ session()->get('success') }}
             </div><br />
         @endif
+        
         <table class="table table-striped">
             <thead>
             <tr>
@@ -22,12 +23,12 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>{{$quiz->id}}</td>
-                <td>{{$quiz->titre}}</td>
-                <td>{{$quiz->theme}}</td>
-                <td>{{$question->id}}</td>
-            </tr>
+                <tr>
+                    <td>{{$quiz->id}}</td>
+                    <td>{{$quiz->titre}}</td>
+                    <td>{{$quiz->theme}}</td>
+                    <td>{{$question->id}}</td>
+                </tr>
             </tbody>
         </table>
         <div>

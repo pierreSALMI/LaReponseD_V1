@@ -61,9 +61,9 @@ class QuizController extends Controller
 
     public function show2($quiz_id) {
         Question::all();
-        $question = Question::where('quiz_id', $quiz_id)->first();
+        $question = Question::where('quiz_id', $quiz_id)->get();
 
-        $quiz = Quiz::where('id', $quiz_id)->first();
+        $quiz = Quiz::where('id', $quiz_id)->get();
         return view('quizBlade.show2', ['quiz' => $quiz], ['question' => $question]);
     }
 
