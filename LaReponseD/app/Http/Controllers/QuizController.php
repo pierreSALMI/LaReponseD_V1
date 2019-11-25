@@ -49,17 +49,11 @@ class QuizController extends Controller
      */
     public function show($id)
     {
+        //$questions = Question::where('quiz_id', $quiz_id)->get();
         $quiz = Quiz::with('questions')->find($id);
         return view('quizBlade.show', ['quiz' => $quiz]);
     }
-
-    public function show2($quiz_id) {
-        Question::all();
-        $questions = Question::where('quiz_id', $quiz_id)->get();
-
-        $quiz = Quiz::find('id', $quiz_id)->first();
-        return view('quizBlade.show2', ['quiz' => $quiz], compact('questions'));
-    }
+    
 
     /**
      * Show the form for editing the specified resource.
