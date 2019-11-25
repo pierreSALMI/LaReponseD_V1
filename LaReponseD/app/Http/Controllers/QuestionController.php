@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class QuestionController extends Controller
 {
@@ -44,9 +45,10 @@ class QuestionController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public static function show($quiz_id)
+    public function show($quiz_id)
     {
-        $question = Question::where('quiz_id', $quiz_id)->first();
+        //$question = Question::where('quiz_id', $quiz_id)->first();
+        $question = DB::table('questions')->where('quiz_id', $quiz_id);
         return $question;
     }
 
