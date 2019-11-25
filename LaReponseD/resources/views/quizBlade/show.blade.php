@@ -25,11 +25,10 @@
             </thead>
             <tbody>
             <tr>
-                <td>{{$quiz->id}}</td>
                 <td>{{$quiz->titre}}</td>
                 <td>{{$quiz->theme}}</td>
-                <td>{{$question->id}}</td>
-                <td>{{$question->question}}</td>
+                <td>{{$questions->id}}</td>
+                <td>{{$questions->question}}</td>
             </tr>
             </tbody>
         </table>
