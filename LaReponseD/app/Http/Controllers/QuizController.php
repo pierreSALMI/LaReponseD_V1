@@ -60,7 +60,7 @@ class QuizController extends Controller
         Question::all();
         $questions = Question::where('quiz_id', $quiz_id)->get();
 
-        $quiz = Quiz::where('id', $quiz_id)->first();
+        $quiz = Quiz::find('id', $quiz_id)->first();
         return view('quizBlade.show2', ['quiz' => $quiz], compact('questions'));
     }
 
