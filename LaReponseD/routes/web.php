@@ -28,5 +28,9 @@ Route::get('/profiles/{id}', 'ProfileController@show2')->middleware('auth')->nam
 Route::get('/edit', 'ProfileController@edit')->middleware('auth')->name('edit');
 
 
+Route::resource('quiz', 'QuizController');
+
 Route::get('/quiz', 'QuizController@index')->name('quiz');
 Route::get('/quiz/show/{id}', 'QuizController@show')->name('showQuiz');
+
+Route::get('/quiz/show2/{id}', 'QuizController@show2')->name('show2Quiz');
