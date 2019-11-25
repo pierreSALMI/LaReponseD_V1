@@ -12,25 +12,27 @@
                 {{ session()->get('success') }}
             </div><br />
         @endif
+        
+        <h2>{{$quiz->titre}}</h2>
+        <p>{{$quiz->id}}</p>
+
+        @foreach($questions as $question)
         <table class="table table-striped">
             <thead>
             <tr>
                 <td>ID</td>
                 <td>First Name</td>
                 <td>Last Name</td>
-                <td>Birth Date</td>
-                <td>Telephone</td>
-                <td>Address</td>
+                <td>Question</td>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>{{$quiz->titre}}</td>
-                <td>{{$quiz->theme}}</td>
-                <td>{{$questions->id}}</td>
-                <td>{{$questions->question}}</td>
-            </tr>
+                <tr>
+                    <td>{{$question->id}}</td>
+                    <td>{{$question->question}}</td>
+                </tr>
             </tbody>
         </table>
+        @endforeach
         <div>
 @endsection

@@ -51,7 +51,7 @@ class QuizController extends Controller
     {
         $questions = Question::where('quiz_id', $id)->get();
 
-        $quiz = Quiz::with('questions.choix')->find($id);
+        $quiz = Quiz::with('questions')->find($id);
         return view('quizBlade.show', ['quiz' => $quiz], compact('questions'));
     }
 
