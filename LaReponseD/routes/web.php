@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('profile', 'ProfileController');
+Route::resource('quiz', 'QuizController');
 
 Route::get('/profiles', 'ProfileController@index')->name('index')->middleware('auth','role:Admin');
 
