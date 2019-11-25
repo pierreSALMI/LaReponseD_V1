@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Question;
 use App\Quiz;
-use App\Choix;
 use Illuminate\Http\Request;
 use http\Exception\InvalidArgumentException;
 use function Symfony\Component\HttpKernel\Tests\Controller\controller_function;
 use function Symfony\Component\HttpKernel\Tests\controller_func;
+use Illuminate\Support\Facades\Session;
 
 
 class QuizController extends Controller
@@ -28,9 +28,8 @@ class QuizController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create() {
+        return view('quizBlade.create');
     }
 
     /**
@@ -39,9 +38,23 @@ class QuizController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request) {
+        $validatedQuiz = $request->validate([
+            'titre' => 'required',
+            'theme' => 'required',
+        ]);
+   
+        $newQuiz = new Quiz;
+
+        $newQuiz->titre = $request->titre;
+        $newQuiz->theme = $request->theme;
+        $newQuiz->user_id = Auth::user()->id;
+
+        $newQuiz->save();
+
+        Session::put('quizId', $newQuiz->id);
+
+        return redirect()->route('createQuest');
     }
 
     /**

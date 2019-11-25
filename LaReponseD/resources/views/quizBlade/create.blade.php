@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
     <style>
@@ -20,22 +20,27 @@
                     </ul>
                 </div><br />
             @endif
-            <form method="post" action="{{ route('profile.store') }}">
+            
+            <form method="post" action="{{ route('quiz.store') }}">
+                @csrf
+                <!-- TITRE DU QUIZs -->
                 <div class="form-group">
-                    @csrf
-                    <label for="name">Share Name:</label>
-                    <input type="text" class="form-control" name="share_name"/>
+                    <label for="titre">Titre :</label>
+                    <input type="text" class="form-control" id="titre" name="titre" required/>
                 </div>
-                <div class="form-group">
-                    <label for="price">Share Price :</label>
-                    <input type="text" class="form-control" name="share_price"/>
-                </div>
-                <div class="form-group">
-                    <label for="quantity">Share Quantity:</label>
-                    <input type="text" class="form-control" name="share_qty"/>
-                </div>
-                <button type="submit" class="btn btn-primary">Add</button>
+
+                <!-- THEME DU QUIZs -->
+                <label for="theme">Thème :</label>
+                <select name="theme" id="theme" required>
+                    <option value="coucou">--Please choose an option--</option>
+                    <option value="nourriture">nourriture</option>
+                    <option value="jeu">jeu</option>
+                    <option value="Internet">Internet</option>
+                </select></br></br>
+
+                <button type="submit" class="btn btn-primary">Créer</button>
             </form>
+
         </div>
     </div>
 @endsection

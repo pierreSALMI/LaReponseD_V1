@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Choix;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ChoixController extends Controller
 {

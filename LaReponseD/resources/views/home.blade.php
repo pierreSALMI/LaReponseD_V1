@@ -4,8 +4,15 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+        @if(session()->get('success'))
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+            </div><br />
+        @endif
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Dashboard
+                    <button type="button" onclick="window.location='{{ url('quiz/create') }}'">Créer un quiz</button>
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))
