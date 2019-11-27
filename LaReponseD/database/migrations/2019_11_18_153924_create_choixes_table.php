@@ -16,9 +16,9 @@ class CreateChoixesTable extends Migration
         Schema::create('choix', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('choix_juste');
-            $table->string('choix2');
-            $table->string('choix3');
-            $table->string('choix4');
+            $table->string('choix0')->default('');
+            $table->string('choix1')->default('');
+            $table->string('choix2')->default('');
             $table->bigInteger('question_id')->unsigned();
             $table->foreign('question_id')->references('id')->on('questions');
             $table->timestamps();

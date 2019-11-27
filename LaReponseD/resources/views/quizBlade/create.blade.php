@@ -8,7 +8,7 @@
     </style>
     <div class="card uper">
         <div class="card-header">
-            Add Share
+            Créer un nouveau quiz
         </div>
         <div class="card-body">
             @if ($errors->any())

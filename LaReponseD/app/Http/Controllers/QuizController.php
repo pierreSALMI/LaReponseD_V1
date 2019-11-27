@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Question;
 use App\Quiz;
+use View;
 use Illuminate\Http\Request;
 use http\Exception\InvalidArgumentException;
 use function Symfony\Component\HttpKernel\Tests\Controller\controller_function;
@@ -52,9 +53,7 @@ class QuizController extends Controller
 
         $newQuiz->save();
 
-        Session::put('quizId', $newQuiz->id);
-
-        return redirect()->route('createQuest');
+        return view('quizBlade.question.create', ['quiz' => $newQuiz]);
     }
 
     /**

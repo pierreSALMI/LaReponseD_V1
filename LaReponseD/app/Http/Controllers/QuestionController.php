@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Question;
+use App\Quiz;
+use View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
@@ -26,12 +29,10 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        $value = Session::get('key');
-        $quiz = Quiz::find($value);
+        $current_id = Auth::user()->id;
+        $quiz = Quiz::where('user_id', $current_id)->latest('created_at')->first();
 
-        var_dump($quiz);
-
-        return redirect('quizBlade.createQuest', ['quiz' => $quiz]);
+        return View::make('quizBlade.createQuest', ['quiz' => $quiz]);
     }
 
     /**
@@ -40,18 +41,31 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        if ($_POST['action'] == 'again') {
-            $value = Session::get('key');
+    public function store(Request $request) {
+        $current_id = Auth::user()->id;
+        $quiz = Quiz::where('user_id', $current_id)->latest('created_at')->first();
 
-            $quiz = Quiz::find($value);
+        $validatedQuiz = $request->validate([
+            'question1' => 'required',
+            'rep2' => 'required',
+            'rep3' => 'required',
+            'rep4' => 'required',
+            'rep5' => 'required',
+        ]);
+    
+        $newQuestion = new Question;
 
-            return redirect('quizBlade.createQuest', ['quiz' => $quiz]);
+        $newQuestion->question = $request->question1;
+        $newQuestion->quiz_id = $quiz->id;
 
-        } else if ($_POST['action'] == 'end') {
-            return redirect()->to('/');
-        }
+        $newQuestion->save();
+
+        $reponses = array('rep1' => $request->request->get('rep2'),
+                    'rep2' => $request->request->get('rep3'),
+                    'rep3' => $request->request->get('rep4'),
+                    'rep4' => $request->request->get('rep5'));
+
+        return view('quizBlade.choix.create', ['quiz' => $quiz,'question' => $newQuestion, 'reponses' => $reponses]);
     }
 
     /**
