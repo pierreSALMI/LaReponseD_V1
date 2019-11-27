@@ -15,6 +15,9 @@ class Quiz extends Model
     public function questions() {
         return $this->hasMany(Question::class, 'quiz_id', 'id');
     }
+    public function question() {
+        return $this->hasOne(Question::class, 'quiz_id', 'id');
+    }
 
     protected $fillable = [
         'titre',

@@ -6,10 +6,11 @@ use App\Question;
 use App\Quiz;
 use View;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use http\Exception\InvalidArgumentException;
 use function Symfony\Component\HttpKernel\Tests\Controller\controller_function;
 use function Symfony\Component\HttpKernel\Tests\controller_func;
 use Illuminate\Support\Facades\Session;
+
 
 class QuizController extends Controller
 {
@@ -91,14 +92,14 @@ class QuizController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $quiz = Quiz::with('questions.choix')->find($id);
         $request->validate([
             'theme'=>'required|string',
-            'question'=>'required|string',
-            'choix_juste'=>'required|string',
-            'choix2'=>'required|string',
+            'question-'=>'required|string',
+            'choix_juste-'=>'required|string',
+            'choix2-'=>'required|string',
             ]);
 
-        $quiz = Quiz::with('questions.choix')->find($id);
         $quiz->theme = $request->get('theme');
         foreach ($quiz->questions as $question) {
             $question->question = $request->get('question');
