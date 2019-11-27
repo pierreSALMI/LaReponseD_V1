@@ -43,7 +43,7 @@ class QuizController extends Controller
             'titre' => 'required',
             'theme' => 'required',
         ]);
-   
+
         $newQuiz = new Quiz;
 
         $newQuiz->titre = $request->titre;
@@ -96,8 +96,8 @@ class QuizController extends Controller
         $quiz = Quiz::with('questions.choix')->find($id);
         $request->validate([
             'theme'=>'required|string',
-            'question-'=>'required|string',
-            'choix_juste-'=>'required|string',
+            'question'=>'required|string',
+            'choix_juste'=>'required|string',
             'choix2-'=>'required|string',
             ]);
 
