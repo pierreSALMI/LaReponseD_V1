@@ -6,6 +6,7 @@ use App\Question;
 use App\Quiz;
 use View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use http\Exception\InvalidArgumentException;
 use function Symfony\Component\HttpKernel\Tests\Controller\controller_function;
 use function Symfony\Component\HttpKernel\Tests\controller_func;
