@@ -94,6 +94,7 @@ class QuizController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $quiz = Quiz::with('questions.choix')->find($id);
         $request->validate([
             'theme'=>'required|string',
             'questions'=> ['required', 'array', function($attribute, $values, $fail) use($id){
