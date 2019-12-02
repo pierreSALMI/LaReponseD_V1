@@ -37,3 +37,5 @@ Route::get('quiz/edit/{id}', 'QuizController@edit')->name('editQuiz');
 Route::get('/quiz/createQuiz', 'QuizController@create')->name('createQuiz');
 
 Route::get('/quiz/createQuest', 'QuestionController@create')->name('createQuest');
+Route::post('/quiz/edit/{id}', 'QuizController@update');
+

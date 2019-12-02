@@ -97,7 +97,7 @@ class QuizController extends Controller
             'theme'=>'required|string',
             'question'=>'required|string',
             'choix_juste'=>'required|string',
-            'choix2-'=>'required|string',
+            'choix0'=>'required|string',
             ]);
 
         $quiz->theme = $request->get('theme');
@@ -105,7 +105,7 @@ class QuizController extends Controller
             $question->question = $request->get('question');
             $question->save();
             $question->choix->choix_juste = $request->get('choix_juste');
-            $question->choix->choix2 = $request->get('choix2');
+            $question->choix->choix0 = $request->get('choix0');
             $question->choix->save();
         }
         $quiz->save();
