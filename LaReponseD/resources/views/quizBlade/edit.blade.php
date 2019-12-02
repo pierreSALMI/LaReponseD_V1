@@ -28,22 +28,31 @@
                 @foreach($quiz->questions as $question)
                     <div class="form-group">
                         <label for="question">Question :</label>
-                        <input type="text" class="form-control" name="question}" value="{{ $question->question }}" />
+                        <input type="text" class="form-control" name="questions[{{ $question->id }}][question]" value="{{ $question->question }}" />
                     </div>
 
                     <div class="form-group">
                         <label for="choix_juste">choix Juste :</label>
-                        <input type="text" class="form-control" name="choix_juste" value="{{ $question->choix->choix_juste }}" />
+                        <input type="text" class="form-control" name="questions[{{ $question->id }}][choix_juste]" value="{{ $question->choix->choix_juste }}" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="choix0">choix0 :</label>
+                        <input type="text" class="form-control" name="questions[{{ $question->id }}][choix0]" value="{{ $question->choix->choix0 }}" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="choix1">choix1 :</label>
+                        <input type="text" class="form-control" name="questions[{{ $question->id }}][choix1]" value="{{ $question->choix->choix1 }}" />
                     </div>
 
                     <div class="form-group">
                         <label for="choix2">choix2 :</label>
-                        <input type="text" class="form-control" name="choix2" value="{{ $question->choix->choix2 }}" />
+                        <input type="text" class="form-control" name="questions[{{ $question->id }}][choix2]" value="{{ $question->choix->choix2 }}" />
                     </div>
-
-                    <button type="submit" class="btn btn-primary">Update</button>
+                @endforeach
+                <button type="submit" class="btn btn-primary">Update</button>
             </form>
-            @endforeach
         </div>
     </div>
 

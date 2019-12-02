@@ -11,6 +11,7 @@ use http\Exception\InvalidArgumentException;
 use function Symfony\Component\HttpKernel\Tests\Controller\controller_function;
 use function Symfony\Component\HttpKernel\Tests\controller_func;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 
 class QuizController extends Controller
@@ -96,17 +97,29 @@ class QuizController extends Controller
         $quiz = Quiz::with('questions.choix')->find($id);
         $request->validate([
             'theme'=>'required|string',
-            'question'=>'required|string',
-            'choix_juste'=>'required|string',
-            'choix0'=>'required|string',
+            'questions'=> ['required', 'array', function($attribute, $values, $fail) use($id){
+                foreach($values as $question_id => $value) {
+                    if(!Question::where('quiz_id', $id)->where('id', $question_id)->exists()){
+                        $fail($attribute.' contains question_id '.$question_id.' which does not exist.');
+                    }
+                }
+            }],
+            'questions.*.question' => 'required|string',
+            'questions.*.choix_juste'=>'required|string',
+            'questions.*.choix0'=>'required|string',
+            'questions.*.choix1'=>'required|string',
+            'questions.*.choix2'=>'required|string',
             ]);
 
         $quiz->theme = $request->get('theme');
-        foreach ($quiz->questions as $question) {
-            $question->question = $request->get('question');
+        foreach ($request->input('questions') as $question_id => $values) {
+            $question = Question::find($question_id);
+            $question->question = $values['question'];
             $question->save();
-            $question->choix->choix_juste = $request->get('choix_juste');
-            $question->choix->choix0 = $request->get('choix0');
+            $question->choix->choix_juste = $values['choix_juste'];
+            $question->choix->choix0 = $values['choix0'];
+            $question->choix->choix1 = $values['choix1'];
+            $question->choix->choix2 = $values['choix2'];
             $question->choix->save();
         }
         $quiz->save();

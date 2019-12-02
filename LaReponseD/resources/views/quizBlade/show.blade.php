@@ -32,9 +32,9 @@
                         <td>{{$question->id}}</td>
                         <td>{{$question->question}}</td>
                         <td>{{$question->choix->choix_juste}}</td>
+                        <td>{{$question->choix->choix0}}</td>
+                        <td>{{$question->choix->choix1}}</td>
                         <td>{{$question->choix->choix2}}</td>
-                        <td>{{$question->choix->choix3}}</td>
-                        <td>{{$question->choix->choix4}}</td>
                     </tr>
                 </tbody>
             </table>
