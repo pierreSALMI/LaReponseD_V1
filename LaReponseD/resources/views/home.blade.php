@@ -10,8 +10,9 @@
             </div><br />
         @endif
             <div class="card">
-                <div class="card-header">Dashboard
-                    <button type="button" onclick="window.location='{{ url('quiz/create') }}'">Créer un quiz</button>
+                <div class="card-header">
+                    <h2 class="float-left">Dashboard</h2>
+                    <button type="button" class="btn btn-primary float-right" onclick="window.location='{{ url('quiz/create') }}'">Créer un quiz</button>
                 </div>
 
                 <div class="card-body">
