@@ -53,6 +53,7 @@
                     </div>
                 @endforeach
                 <button type="submit" class="btn btn-primary">Update</button>
+                <button type="button" class="btn btn-primary float-right" onclick="window.location='{{ url('quiz/deleteQuest/'.$quiz->id) }}'">Delete</button>
             </form>
         </div>
     </div>

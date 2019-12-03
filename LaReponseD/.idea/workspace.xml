@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afbed935-ac57-41e6-a835-ae6e98a2387c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/quizBlade/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Choix.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Choix.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuizController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuizController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Question.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Quiz.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Quiz.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quizBlade/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quizBlade/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quizBlade/quiz.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +72,13 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="lareponsed-db: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="quiz: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="lareponsed-db@127.0.0.1" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="lareponsed-db: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="users: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -216,7 +232,8 @@
       <workItem from="1574711775692" duration="2774000" />
       <workItem from="1574850553893" duration="2163000" />
       <workItem from="1574889815633" duration="1372000" />
-      <workItem from="1575287463745" duration="7989000" />
+      <workItem from="1575287463745" duration="8586000" />
+      <workItem from="1575368923005" duration="9520000" />
     </task>
     <servers />
   </component>

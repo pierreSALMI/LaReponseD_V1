@@ -23,7 +23,7 @@ class QuizController extends Controller
      */
     public function index()
     {
-        return view('quizBlade.quiz');
+        return view('quizBlade.index', ['quizs' => Quiz::all()->sortByDesc('created_at')]);
     }
 
     /**
@@ -133,8 +133,11 @@ class QuizController extends Controller
      * @param  \App\Quiz  $quiz
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Quiz $quiz)
+    public function destroy($id)
     {
-        //
+        $quiz = Quiz::find($id);
+        $quiz->delete();
+
+        return redirect('/quiz')->with('success', 'Quiz delete!');
     }
 }

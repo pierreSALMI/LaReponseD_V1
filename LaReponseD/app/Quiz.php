@@ -23,4 +23,12 @@ class Quiz extends Model
         'titre',
         'theme',
     ];
+
+    public static function boot() {
+        parent::boot();
+        static::deleting(function($quiz) {
+            foreach($quiz->questions as $question)
+            $question->delete();
+        });
+    }
 }
