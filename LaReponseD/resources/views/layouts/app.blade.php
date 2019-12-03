@@ -1,3 +1,7 @@
+<?php
+    use App\Profile;
+?>
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -12,6 +16,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/sidebar.js') }}" defer></script>
+    <script src="{{ asset('js/darkmode.js') }}" defer></script>
     <script src="https://kit.fontawesome.com/e8767330e3.js" crossorigin="anonymous"></script>
 
     <!-- Fonts -->
@@ -21,6 +26,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/darkmode.css') }}" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div id="app">
@@ -109,14 +115,19 @@
             </div>
         </nav>
 
-        <div class="page-wrapper chiller-theme toggled">
+        @if (Auth::check())
+        <?php
+            $id = Auth::user()->id;
+            $profile = Profile::where('id', $id)->first();
+        ?>
+        <div class="page-wrapper chiller-theme">
             <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
                 <i class="fas fa-bars"></i>
             </a>
             <nav id="sidebar" class="sidebar-wrapper">
                 <div class="sidebar-content">
                 <div class="sidebar-brand">
-                    <a href="#">pro sidebar</a>
+                    <a href="#">La Réponse D</a>
                     <div id="close-sidebar">
                     <i class="fas fa-times"></i>
                     </div>
@@ -127,10 +138,11 @@
                         alt="User picture">
                     </div>
                     <div class="user-info">
-                    <span class="user-name">Jhon
-                        <strong>Smith</strong>
+                    <span class="user-name">
+                        <span class="firstName">{{ $profile->firstName }}</span>
+                        <span class="lastName">{{ $profile->lastName }}</span>
                     </span>
-                    <span class="user-role">Administrator</span>
+                    <span class="user-role"></span>
                     <span class="user-status">
                         <i class="fa fa-circle"></i>
                         <span>Online</span>
@@ -285,6 +297,14 @@
                         <span>Examples</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="#">
+                        <i class="fas fa-moon"></i>
+                        <label class="switch">
+                            <input id="dark-mode-toggle" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        </a>
                     </ul>
                 </div>
                 <!-- sidebar-menu  -->
@@ -315,6 +335,11 @@
             <!-- page-content" -->
         </div>
             <!-- page-wrapper -->
+        @else
+            <main class="container py-4">
+                @yield('content')
+            </main>
+        @endif
     </div>
     </body>
 </html>

@@ -49499,6 +49499,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/darkmode.scss":
+/*!**************************************!*\
+  !*** ./resources/sass/darkmode.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/sidebar.scss":
 /*!*************************************!*\
   !*** ./resources/sass/sidebar.scss ***!
@@ -49511,15 +49522,16 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!*******************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/sidebar.scss ***!
-  \*******************************************************************************************/
+/*!**************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/sidebar.scss ./resources/sass/darkmode.scss ***!
+  \**************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\Users\User\Documents\Ynov\B2\WebDev\PHP\ProjetQuizz\LaReponseD\LaReponseD\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! C:\Users\User\Documents\Ynov\B2\WebDev\PHP\ProjetQuizz\LaReponseD\LaReponseD\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\User\Documents\Ynov\B2\WebDev\PHP\ProjetQuizz\LaReponseD\LaReponseD\resources\sass\sidebar.scss */"./resources/sass/sidebar.scss");
+__webpack_require__(/*! C:\Users\User\Documents\Ynov\B2\WebDev\PHP\ProjetQuizz\LaReponseD\LaReponseD\resources\sass\sidebar.scss */"./resources/sass/sidebar.scss");
+module.exports = __webpack_require__(/*! C:\Users\User\Documents\Ynov\B2\WebDev\PHP\ProjetQuizz\LaReponseD\LaReponseD\resources\sass\darkmode.scss */"./resources/sass/darkmode.scss");
 
 
 /***/ })

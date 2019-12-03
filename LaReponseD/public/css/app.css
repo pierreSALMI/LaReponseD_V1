@@ -11100,3 +11100,11 @@ a.text-dark:focus {
   }
 }
 
+.firstName {
+  text-transform: capitalize;
+}
+
+.lastName {
+  text-transform: uppercase;
+}
+

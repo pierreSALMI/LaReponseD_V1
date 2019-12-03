@@ -45,27 +45,32 @@ class QuestionController extends Controller
         $current_id = Auth::user()->id;
         $quiz = Quiz::where('user_id', $current_id)->latest('created_at')->first();
 
-        $validatedQuiz = $request->validate([
-            'question1' => 'required',
-            'rep2' => 'required',
-            'rep3' => 'required',
-            'rep4' => 'required',
-            'rep5' => 'required',
-        ]);
+        // $validatedQuiz = $request->validate([
+        //     'question1' => 'required',
+        //     'rep2' => 'required',
+        //     'rep3' => 'required',
+        //     'rep4' => 'required',
+        //     'rep5' => 'required',
+        // ]);
     
-        $newQuestion = new Question;
+        if (isset($request->question1) && isset($request->rep2) && isset($request->rep3) && isset($request->rep4) && isset($request->rep5)) {
+            $newQuestion = new Question;
 
-        $newQuestion->question = $request->question1;
-        $newQuestion->quiz_id = $quiz->id;
+            $newQuestion->question = $request->question1;
+            $newQuestion->quiz_id = $quiz->id;
 
-        $newQuestion->save();
+            $newQuestion->save();
 
-        $reponses = array('rep1' => $request->request->get('rep2'),
-                    'rep2' => $request->request->get('rep3'),
-                    'rep3' => $request->request->get('rep4'),
-                    'rep4' => $request->request->get('rep5'));
+            $reponses = array('rep1' => $request->request->get('rep2'),
+                        'rep2' => $request->request->get('rep3'),
+                        'rep3' => $request->request->get('rep4'),
+                        'rep4' => $request->request->get('rep5'));
 
-        return view('quizBlade.choix.create', ['quiz' => $quiz,'question' => $newQuestion, 'reponses' => $reponses]);
+            return view('quizBlade.choix.create', ['quiz' => $quiz,'question' => $newQuestion, 'reponses' => $reponses]);
+        } else {
+            $messages = "Vous n'avez pas remplis tous les champs";
+            return view('quizBlade.question.create', ['quiz' => $quiz])->with('error','Vous n\'avez pas rentré tous les champs requis')->withErrors($messages);
+        }
     }
 
     /**

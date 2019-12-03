@@ -2,5 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/sidebar.css": "/css/sidebar.css",
+    "/css/darkmode.css": "/css/darkmode.css",
+    "/js/darkmode.js": "/js/darkmode.js",
     "/js/sidebar.js": "/js/sidebar.js"
 }
