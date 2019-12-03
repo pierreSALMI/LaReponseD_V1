@@ -13,10 +13,10 @@ class Choix extends Model
     }
 
     protected $fillable = [
-        'choix_juste',
+        'choix0',
+        'choix1',
         'choix2',
         'choix3',
-        'choix4',
     ];
 
 }
