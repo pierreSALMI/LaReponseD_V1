@@ -23,7 +23,7 @@ class QuizController extends Controller
      */
     public function index()
     {
-        return view('quizBlade.quiz');
+        return view('quizBlade.index', ['quizs' => Quiz::all()->sortByDesc('created_at')]);
     }
 
     /**
@@ -105,10 +105,10 @@ class QuizController extends Controller
                 }
             }],
             'questions.*.question' => 'required|string',
-            'questions.*.choix_juste'=>'required|string',
             'questions.*.choix0'=>'required|string',
             'questions.*.choix1'=>'required|string',
             'questions.*.choix2'=>'required|string',
+            'questions.*.choix3'=>'required|string',
             ]);
 
         $quiz->theme = $request->get('theme');
@@ -116,10 +116,10 @@ class QuizController extends Controller
             $question = Question::find($question_id);
             $question->question = $values['question'];
             $question->save();
-            $question->choix->choix_juste = $values['choix_juste'];
             $question->choix->choix0 = $values['choix0'];
             $question->choix->choix1 = $values['choix1'];
             $question->choix->choix2 = $values['choix2'];
+            $question->choix->choix3 = $values['choix3'];
             $question->choix->save();
         }
         $quiz->save();
@@ -133,8 +133,16 @@ class QuizController extends Controller
      * @param  \App\Quiz  $quiz
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Quiz $quiz)
+    public function destroy($id)
     {
-        //
+        $quiz = Quiz::find($id);
+        $quiz->delete();
+
+        return redirect('/quiz')->with('success', 'Quiz delete!');
+    }
+
+    public function play(Request $request, $id)
+    {
+
     }
 }

@@ -30,15 +30,64 @@
                             <td>Réponse 4</td>
                         </tr>
                     </thead>
-                    <tbody>
+
+                    {{ $random = random_int(0,3) }}
+                    @if($random == 0)
+                        <tbody>
+                            <tr>
+                                <td>{{$question->question}}</td>
+                                <td>{{$question->choix->choix0}}</td>
+                                <td>{{$question->choix->choix1}}</td>
+                                <td>{{$question->choix->choix2}}</td>
+                                <td>{{$question->choix->choix3}}</td>
+                            </tr>
+                        </tbody>
+
+                    @elseif($random == 1)
+                        <tbody>
                         <tr>
                             <td>{{$question->question}}</td>
-                            <td>{{$question->choix->choix_juste}}</td>
-                            <td>{{$question->choix->choix0}}</td>
-                            <td>{{$question->choix->choix1}}</td>
-                            <td>{{$question->choix->choix2}}</td>
+                            <td> <input type="radio" name="choix3"> {{$question->choix->choix3}}</td>
+                            <td> <input type="radio" name="choix0"> {{$question->choix->choix0}}</td>
+                            <td> <input type="radio" name="choix2"> {{$question->choix->choix2}}</td>
+                            <td> <input type="radio" name="choix1"> {{$question->choix->choix1}}</td>
                         </tr>
-                    </tbody>
+                        </tbody>
+
+                    @elseif($random == 2)
+                        <tbody>
+                        <tr>
+                            <td>{{$question->question}}</td>
+                            <td> <input type="radio" name="choix2"> {{$question->choix->choix2}}</td>
+                            <td> <input type="radio" name="choix3"> {{$question->choix->choix3}}</td>
+                            <td> <input type="radio" name="choix0"> {{$question->choix->choix0}}</td>
+                            <td> <input type="radio" name="choix1"> {{$question->choix->choix1}}</td>
+                        </tr>
+                        </tbody>
+
+                    @elseif($random == 3)
+                        <tbody>
+                        <tr>
+                            <td>{{$question->question}}</td>
+                            <td> <input type="radio" name="choix0"> {{$question->choix->choix0}}</td>
+                            <td> <input type="radio" name="choix2"> {{$question->choix->choix2}}</td>
+                            <td> <input type="radio" name="choix3"> {{$question->choix->choix3}}</td>
+                            <td> <input type="radio" name="choix1"> {{$question->choix->choix1}}</td>
+                        </tr>
+                        </tbody>
+                    @else
+                        <tbody>
+                        <tr>
+                            <td>{{$question->question}}</td>
+                            <td> <input type="radio" name="choix3"> {{$question->choix->choix3}}</td>
+                            <td> <input type="radio" name="choix2"> {{$question->choix->choix2}}</td>
+                            <td> <input type="radio" name="choix1"> {{$question->choix->choix1}}</td>
+                            <td> <input type="radio" name="choix0"> {{$question->choix->choix0}}</td>
+                        </tr>
+                        </tbody>
+                    @endif
+
+
                 </table>
                 @endforeach
             </div>

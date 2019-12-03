@@ -47,15 +47,15 @@ class ChoixController extends Controller
         $newRep = new Choix;
 
         if (in_array($request->quest1, $reponses)) {
-            $j = 0;
+            $j = 1;
 
-            for ($i=0; $i < sizeof($reponses); $i++) { 
+            for ($i=0; $i < sizeof($reponses); $i++) {
                 if ($reponses[$i] != $request->quest1) {
                     $aled = "choix{$j}";
                     $newRep->$aled = $reponses[$i];
                     $j += 1;
                 } else {
-                    $newRep->choix_juste = $reponses[$i];
+                    $newRep->choix0 = $reponses[$i];
                 }
             }
             $newRep->question_id = $question->id;
