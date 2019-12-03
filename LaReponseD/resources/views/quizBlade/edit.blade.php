@@ -2,6 +2,7 @@
 
 @section('content')
 
+    @if(Auth::user()->id == $quiz->user_id)
     <div class="row">
         <div class="col-sm-8 offset-sm-2">
             <h1 class="display-3">Modifier le Quiz</h1>
@@ -55,5 +56,10 @@
             </form>
         </div>
     </div>
+    @else
+    <div>
+        <h2>Heuuu nik ta reum</h2>
+    </div>
+    @endif
 
 @endsection
