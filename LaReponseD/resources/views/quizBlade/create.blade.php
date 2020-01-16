@@ -32,7 +32,7 @@
                 <!-- THEME DU QUIZs -->
                 <label for="theme">Thème :</label>
                 <select name="theme" id="theme" required>
-                    <option value="coucou">--Please choose an option--</option>
+                    <option value="">--Please choose an option--</option>
                     <option value="nourriture">nourriture</option>
                     <option value="jeu">jeu</option>
                     <option value="Internet">Internet</option>
