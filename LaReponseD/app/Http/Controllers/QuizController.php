@@ -141,7 +141,7 @@ class QuizController extends Controller
         return redirect('/quiz')->with('success', 'Quiz delete!');
     }
 
-    public function play(Request $request, $id)
+    public function verified(Request $request, $id)
     {
 
     }
