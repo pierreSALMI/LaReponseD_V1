@@ -31,7 +31,7 @@
                         </tr>
                     </thead>
 
-                    {{ $random = random_int(0,3) }}
+                    <span hidden>{{ $random = random_int(0,3) }}</span>
                     @if($random == 0)
                         <tbody>
                             <tr>

@@ -27,7 +27,6 @@
                                 <table class="table table-striped">
                                     <thead>
                                     <tr>
-                                        <td>ID</td>
                                         <td>Titre</td>
                                         <td>theme</td>
                                         <td>Créateur</td>
@@ -39,7 +38,6 @@
                                     <tbody>
                                         @foreach($quizs as $quiz)
                                             <tr>
-                                                <td>{{$quiz->id}}</td>
                                                 <td>{{$quiz->titre}}</td>
                                                 <td>{{$quiz->theme}}</td>
                                                 <td>{{ DB::table('users')->where('id', $quiz->user_id)->first()->name}}</td>
