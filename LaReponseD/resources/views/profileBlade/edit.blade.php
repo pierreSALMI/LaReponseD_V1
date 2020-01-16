@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-group">
                     <label for="telNbr">Téléphone :</label>
-                    <input type="tel" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" class="form-control" name="telNbr" value="{{ $profile->telNbr }}" />
+                    <input type="tel" pattern="[0-9]{2}.[0-9]{2}.[0-9]{2}.[0-9]{2}.[0-9]{2}" class="form-control" name="telNbr" value="{{ $profile->telNbr }}" />
                 </div>
                 <div class="form-group">
                     <label for="address">Adresse :</label>
