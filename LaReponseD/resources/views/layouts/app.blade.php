@@ -22,11 +22,64 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/darkmode.css') }}" rel="stylesheet" type="text/css">
+    <style>
+        html, body {
+            background-color: #fff;
+            color: #636b6f;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .full-height {
+            height: 100vh;
+        }
+
+        .flex-center {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .position-ref {
+            position: relative;
+        }
+
+        .top-right {
+            position: absolute;
+            right: 10px;
+            top: 18px;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .title {
+            font-size: 84px;
+        }
+
+        .links > a {
+            color: #636b6f;
+            padding: 0 25px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .m-b-md {
+            margin-bottom: 30px;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -64,44 +117,17 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    @hasrole('Admin')
-                                    <a class="dropdown-item" href="{{ route('index') }}"
-                                       onclick="event.preventDefault();
-                                            document.getElementById('index-form').submit();">
-                                        {{ __('All Profiles') }}
-                                    </a>
-                                    <form id="index-form" action="{{ route('index') }}" method="GET" style="display: none;">
-                                        @csrf
-                                    </form>
-                                    @endhasrole
                                     <a class="dropdown-item" href="{{ route('home') }}"
                                        onclick="event.preventDefault();
                                             document.getElementById('home-form').submit();">
                                         {{ __('Home') }}
-                                    </a>
-                                    <a class="dropdown-item" href="{{ url('profiles/'.Auth::id()) }}"
-                                       onclick="event.preventDefault();
-                                            document.getElementById('show-form').submit();">
-                                        {{ __('Profile') }}
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('edit') }}"
-                                       onclick="event.preventDefault();
-                                            document.getElementById('edit-form').submit();">
-                                        {{ __('Edit Profile') }}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
                                     <form id="home-form" action="{{ route('home') }}" method="GET" style="display: none;">
-                                        @csrf
-                                    </form>
-                                    <form id="show-form" action="{{ url('profiles/'.Auth::id()) }}" method="GET" style="display: none;">
-                                        @csrf
-                                    </form>
-                                    <form id="edit-form" action="{{ route('edit') }}" method="EDIT" style="display: none;">
                                         @csrf
                                     </form>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -172,7 +198,6 @@
                         <a href="#">
                         <i class="fa fa-tachometer-alt"></i>
                         <span>Dashboard</span>
-                        <span class="badge badge-pill badge-warning">New</span>
                         </a>
                         <div class="sidebar-submenu">
                         <ul>
@@ -181,33 +206,47 @@
                                 <span class="badge badge-pill badge-success">Pro</span>
                             </a>
                             </li>
-                            <li>
-                            <a href="#">Dashboard 2</a>
-                            </li>
-                            <li>
-                            <a href="#">Dashboard 3</a>
-                            </li>
                         </ul>
                         </div>
                     </li>
                     <li class="sidebar-dropdown">
                         <a href="#">
-                        <i class="fa fa-shopping-cart"></i>
-                        <span>E-commerce</span>
-                        <span class="badge badge-pill badge-danger">3</span>
+                        <i class="fas fa-user-friends"></i>
+                        <span>Profile</span>
                         </a>
                         <div class="sidebar-submenu">
                         <ul>
                             <li>
-                            <a href="#">Products
-
+                            @hasrole('Admin')
+                            <a class="dropdown-item fas fa-user" href="{{ route('index') }}"
+                                onclick="event.preventDefault();
+                                    document.getElementById('index-form').submit();">
+                                {{ __('All Profiles') }}
                             </a>
+                            <form id="index-form" action="{{ route('index') }}" method="GET" style="display: none;">
+                                @csrf
+                            </form>
+                            @endhasrole
                             </li>
                             <li>
-                            <a href="#">Orders</a>
+                            <a class="dropdown-item" href="{{ url('profiles/'.Auth::id()) }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('show-form').submit();">
+                                {{ __('Profile') }}
+                            </a>
+                            <form id="show-form" action="{{ url('profiles/'.Auth::id()) }}" method="GET" style="display: none;">
+                                @csrf
+                            </form>
                             </li>
                             <li>
-                            <a href="#">Credit cart</a>
+                            <a class="dropdown-item" href="{{ route('edit') }}"
+                                onclick="event.preventDefault();
+                                    document.getElementById('edit-form').submit();">
+                                {{ __('Edit Profile') }}
+                            </a>
+                            <form id="edit-form" action="{{ route('edit') }}" method="EDIT" style="display: none;">
+                                @csrf
+                            </form>
                             </li>
                         </ul>
                         </div>
