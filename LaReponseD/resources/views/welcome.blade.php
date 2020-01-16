@@ -5,7 +5,7 @@
     @if (Route::has('login'))
         <div class="top-right links">
             @auth
-                
+
             @else
                 <a href="{{ route('login') }}">Login</a>
 
@@ -20,17 +20,52 @@
         <div class="title m-b-md">
             La Réponse D
         </div>
+        <section class="section-content">
+            <div class="container">
 
-        <div class="links">
-            <a href="https://laravel.com/docs">Docs</a>
-            <a href="https://laracasts.com">Laracasts</a>
-            <a href="https://laravel-news.com">News</a>
-            <a href="https://blog.laravel.com">Blog</a>
-            <a href="https://nova.laravel.com">Nova</a>
-            <a href="https://forge.laravel.com">Forge</a>
-            <a href="https://vapor.laravel.com">Vapor</a>
-            <a href="https://github.com/laravel/laravel">GitHub</a>
-        </div>
+                <header class="section-heading">
+                    <h3 class="section-title">Popular products</h3>
+                </header><!-- sect-heading -->
+
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div href="#" class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="{{ asset('/images/unidab.PNG')  }}" flex="wrap"> </a>
+                            <figcaption class="info-wrap">
+                                <a href="#">Just another product name</a>
+                            </figcaption>
+                        </div>
+                    </div> <!-- col.// -->
+                    <div class="col-md-3">
+                        <div href="#" class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="{{ asset('/images/unidab.PNG')  }}" flex="wrap"> </a>
+                            <figcaption class="info-wrap">
+                                <a href="#">Some item name here</a>
+                            </figcaption>
+                        </div>
+                    </div> <!-- col.// -->
+                    <div class="col-md-3">
+                        <div href="#" class="card card-product-grid">
+                            <a href="#" class="img-wrap" > <img src="{{ asset('/images/unidab.PNG')  }}"> </a>
+                            <figcaption class="info-wrap">
+                                <a href="#">Great product name here</a>
+                            </figcaption>
+                        </div>
+                    </div> <!-- col.// -->
+                    <div class="col-md-3">
+                        <div href="#" class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="{{ asset('/images/unidab.PNG')  }}" > </a>
+                            <figcaption class="info-wrap">
+                                <a href="#">Just another product name</a>
+                            </figcaption>
+                        </div>
+                    </div> <!-- col.// -->
+                </div> <!-- row.// -->
+
+            </div> <!-- container .//  -->
+        </section>
+
     </div>
 </div>
 @endsection
