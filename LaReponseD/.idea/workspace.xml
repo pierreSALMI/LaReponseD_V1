@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afbed935-ac57-41e6-a835-ae6e98a2387c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/quizBlade/verified.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/unidab.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuizController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuizController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quizBlade/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quizBlade/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quizBlade/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quizBlade/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quizBlade/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quizBlade/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,6 +237,7 @@
       <workItem from="1576503055395" duration="977000" />
       <workItem from="1579163437050" duration="106000" />
       <workItem from="1579163660141" duration="8555000" />
+      <workItem from="1579431713970" duration="8361000" />
     </task>
     <servers />
   </component>
@@ -273,5 +278,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1293" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579163687251" />
+    <state width="579" height="446" key="SwitcherDM" timestamp="1579438096879">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="579" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1579438096879" />
   </component>
 </project>

@@ -145,4 +145,8 @@ class QuizController extends Controller
     {
 
     }
+    public function categorie($theme)
+    {
+        return view('quizBlade.index', ['quizs' => Quiz::all()->where('theme', $theme)]);
+    }
 }

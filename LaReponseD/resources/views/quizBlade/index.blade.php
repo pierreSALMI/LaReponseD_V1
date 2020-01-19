@@ -22,6 +22,7 @@
                                 {{ session()->get('success') }}
                             </div><br />
                         @endif
+
                         <div class="card">
                             <div class="card-header">
                                 <table class="table table-striped">

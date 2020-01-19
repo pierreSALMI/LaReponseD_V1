@@ -20,7 +20,7 @@
                     </ul>
                 </div><br />
             @endif
-            
+
             <form method="post" action="{{ route('quiz.store') }}">
                 @csrf
                 <!-- TITRE DU QUIZs -->
@@ -33,9 +33,10 @@
                 <label for="theme">Thème :</label>
                 <select name="theme" id="theme" required>
                     <option value="">--Please choose an option--</option>
-                    <option value="nourriture">nourriture</option>
+                    <option value="cuisine">cuisine</option>
                     <option value="jeu">jeu</option>
-                    <option value="Internet">Internet</option>
+                    <option value="internet">internet</option>
+                    <option value="sport">sport</option>
                 </select></br></br>
 
                 <button type="submit" class="btn btn-primary">Créer</button>

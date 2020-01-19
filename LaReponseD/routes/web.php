@@ -40,3 +40,4 @@ Route::get('/quiz/createQuest', 'QuestionController@create')->name('createQuest'
 Route::post('/quiz/edit/{id}', 'QuizController@update');
 Route::get('/quiz/deleteQuest/{id}', 'QuizController@destroy')->name('destroyQuiz');
 
+Route::get('/quiz/categorie/{theme}', 'QuizController@categorie')->name('categorieQuiz');
