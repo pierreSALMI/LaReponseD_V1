@@ -19,10 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('profile', 'ProfileController');
-Route::resource('quiz', 'QuizController');
-Route::resource('question', 'QuestionController');
-Route::resource('choix', 'ChoixController');
+Route::post('quiz/results', 'QuizController@verify')->name('verify');
 
 Route::post('role.setRole','RoleController@setRole')->name('setRole')->middleware('auth','role:Admin');
 
@@ -41,3 +38,8 @@ Route::post('/quiz/edit/{id}', 'QuizController@update');
 Route::get('/quiz/deleteQuest/{id}', 'QuizController@destroy')->name('destroyQuiz');
 
 Route::get('/quiz/categorie/{theme}', 'QuizController@categorie')->name('categorieQuiz');
+
+Route::resource('profile', 'ProfileController');
+Route::resource('quiz', 'QuizController');
+Route::resource('question', 'QuestionController');
+Route::resource('choix', 'ChoixController');

@@ -141,10 +141,12 @@ class QuizController extends Controller
         return redirect('/quiz')->with('success', 'Quiz delete!');
     }
 
-    public function verified(Request $request, $id)
-    {
-
+    public function verify(Request $request){
+        echo $request->reponses[0];
+        die();
+        return redirect('/quiz/verify')->with('success','Merci d\'avoir participé');
     }
+
     public function categorie($theme)
     {
         return view('quizBlade.index', ['quizs' => Quiz::all()->where('theme', $theme)]);
