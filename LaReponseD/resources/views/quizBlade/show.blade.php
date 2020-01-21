@@ -10,12 +10,12 @@
             </div><br />
         @endif
         </div>
-        @if(! auth()->check())
-            <div class="alert alert-success">
-                <p>Connectez-vous pour acceder au Quiz</p>
-            </div>
-        @else
-            <div class="card col-md-11">
+        <div class="card col-md-11">
+            @if(! $quiz)
+                <div class="alert alert-success">
+                    <p>Ce quiz n'existe pas</p>
+                </div>
+            @else
                 <div class="card-header">
                     <h2 class="float-left">{{$quiz->titre}}</h2>
 
@@ -63,8 +63,8 @@
                         <button type="submit" class="btn btn-primary" name="action">Valider</button>
                     </form>
                 </div>
-            </div>
-        @endif
+            @endif
+        </div>
     </div>
 </div>
 @endsection

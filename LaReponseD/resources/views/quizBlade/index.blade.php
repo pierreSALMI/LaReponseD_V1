@@ -8,7 +8,7 @@
     </style>
     <div class="uper">
         @if(session()->get('success'))
-            <div class="alert alert-success">
+            <div class="alert alert-danger">
                 {{ session()->get('success') }}
             </div><br />
         @endif

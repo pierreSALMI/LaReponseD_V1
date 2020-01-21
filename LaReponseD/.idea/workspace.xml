@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afbed935-ac57-41e6-a835-ae6e98a2387c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuizController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuizController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/quizBlade/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quizBlade/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/quizBlade/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quizBlade/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/quizBlade/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quizBlade/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,13 +44,6 @@
         <item name="lareponsed-db@127.0.0.1" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="lareponsed-db: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="lareponsed-db@127.0.0.1" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="lareponsed-db: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="choix: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -202,7 +191,17 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:lareponsed-db@127.0.0.1" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:lareponsed-db@127.0.0.1" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@55b93d4f" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -237,7 +236,8 @@
       <workItem from="1576503055395" duration="977000" />
       <workItem from="1579163437050" duration="106000" />
       <workItem from="1579163660141" duration="8555000" />
-      <workItem from="1579431713970" duration="8361000" />
+      <workItem from="1579431713970" duration="8419000" />
+      <workItem from="1579543441286" duration="6711000" />
     </task>
     <servers />
   </component>
