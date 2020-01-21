@@ -24,6 +24,7 @@ Route::post('quiz/results', 'QuizController@verify')->name('verify');
 Route::post('role.setRole','RoleController@setRole')->name('setRole')->middleware('auth','role:Admin');
 
 Route::get('/profiles', 'ProfileController@index')->name('index')->middleware('auth','role:Admin');
+Route::get('/profile/create', 'ProfileController@create')->name('createProfile');
 
 Route::get('/profiles/{id}', 'ProfileController@show2')->middleware('auth')->name('show');
 Route::get('/edit', 'ProfileController@edit')->middleware('auth')->name('edit');

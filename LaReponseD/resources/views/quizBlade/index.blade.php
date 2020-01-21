@@ -30,7 +30,7 @@
                                     <tr>
                                         <td>Titre</td>
                                         <td>theme</td>
-                                        <td>CrÃ©ateur</td>
+                                        <td>Créateur</td>
                                     </tr>
                                     </thead>
                             </div>

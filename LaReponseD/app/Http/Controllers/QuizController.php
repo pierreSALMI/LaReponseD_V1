@@ -92,8 +92,7 @@ class QuizController extends Controller
      * @param  \App\Quiz  $quiz
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         $quiz = Quiz::with('questions.choix')->find($id);
         $request->validate([
             'theme'=>'required|string',
@@ -141,10 +140,17 @@ class QuizController extends Controller
         return redirect('/quiz')->with('success', 'Quiz delete!');
     }
 
-    public function verify(Request $request){
-        echo $request->reponses[0];
-        die();
-        return redirect('/quiz/verify')->with('success','Merci d\'avoir participé');
+    public function verify(Request $request) {
+        $points_max = sizeof($request->reponses);
+        $points = 0;
+
+        for ($i=0; $i < sizeof($request->reponses); $i++) {
+            if ($request[$i] == $request->reponses[$i]) {
+                $points += 1;
+            }
+        }
+
+        return view('quizBlade.results', ['points' => $points, 'points_max' => $points_max]);
     }
 
     public function categorie($theme)

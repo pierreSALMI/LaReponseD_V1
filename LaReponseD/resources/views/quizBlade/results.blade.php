@@ -12,11 +12,10 @@
             <div class="card">
                 <div class="card-header">
                     <h2 class="float-left">Dashboard</h2>
-                    <button type="button" class="btn btn-primary float-right" onclick="window.location='{{ url('quiz/create') }}'">CrÃ©er un quiz</button>
                 </div>
 
                 <div class="card-body">
-                    
+                    <p>{{$points}}/{{$points_max}}</p>
                 </div>
             </div>
         </div>

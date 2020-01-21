@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Profile;
+use Carbon\Carbon;
 
 class ProfileController extends Controller
 {
@@ -24,9 +25,8 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(){
+        return view('profileBlade.create');
     }
 
     /**
@@ -37,7 +37,31 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $current_date_time = Carbon::now()->toDateTimeString();
+
+        $validatedProfile = $request->validate([
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'birthDate' => 'required',
+            'telNbr' => 'required',
+            'address' => 'required',
+        ]);
+
+        $newProfile = new Profile;
+
+        $newProfile->firstName = $request->firstname;
+        $newProfile->lastName = $request->lastname;
+        $newProfile->birthDate = $request->birthDate;
+        $newProfile->telNbr = $request->telNbr;
+        $newProfile->address = $request->address;
+        $newProfile->user_id = Auth::user()->id;
+
+        $newProfile->created_at = $current_date_time;
+        $newProfile->updated_at = $current_date_time;
+
+        $newProfile->save();
+
+        return redirect('/home')->with('success', 'Profil mis à jour!');
     }
 
     /**

@@ -122,15 +122,7 @@
                                             document.getElementById('home-form').submit();">
                                         {{ __('Home') }}
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
                                     <form id="home-form" action="{{ route('home') }}" method="GET" style="display: none;">
-                                        @csrf
-                                    </form>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
@@ -176,19 +168,6 @@
                     </div>
                 </div>
                 <!-- sidebar-header  -->
-                <div class="sidebar-search">
-                    <div>
-                    <div class="input-group">
-                        <input type="text" class="form-control search-menu" placeholder="Search...">
-                        <div class="input-group-append">
-                        <span class="input-group-text">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                        </span>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <!-- sidebar-search  -->
                 <div class="sidebar-menu">
                     <ul>
                     <li class="header-menu">
@@ -362,9 +341,12 @@
                     <i class="fa fa-cog"></i>
                     <span class="badge-sonar"></span>
                 </a>
-                <a href="#">
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <i class="fa fa-power-off"></i>
                 </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
                 </div>
             </nav>
             <!-- sidebar-wrapper  -->
@@ -373,7 +355,7 @@
             </main>
             <!-- page-content" -->
         </div>
-            <!-- page-wrapper -->
+        <!-- page-wrapper -->
         @else
             <main class="container py-4">
                 @yield('content')

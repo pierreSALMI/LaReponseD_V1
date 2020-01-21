@@ -24,18 +24,19 @@
                     @endif
                 </div>
 
-                <div class="card-body">
-                    <form method="post" action="{{ route('verify',['reponses'=>'$reponses']) }}">
-                        @csrf
-                        <?php $quest = 0;
-                            $reponses = [];
-                        ?>
+                <?php
+                    $quest = 0;
+                ?>
 
+                <div class="card-body">
+                    <form method="post" action="{{ route('verify', ['reponses' => 'reponses']) }}">
+                        @csrf
                         @foreach($quiz->questions as $question)
                         <?php
                         $reponses2 = [$question->choix->choix0,$question->choix->choix1,$question->choix->choix2,$question->choix->choix3];
                         ?>
                         <h5>{{$question->question}}</h5>
+                        <input type="hidden" name="reponses[]" value='{{$question->choix->choix0}}'>
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -48,7 +49,7 @@
 
                             <tbody>
                                 <tr>
-                                    @foreach($reponses as $reponse)
+                                    @foreach($reponses2 as $reponse)
                                         <td>
                                         <input type="radio" value="{{$reponse}}" name='<?php echo $quest;?>'>
                                         <label for='<?php echo $quest;?>'>{{$reponse}}</label>
