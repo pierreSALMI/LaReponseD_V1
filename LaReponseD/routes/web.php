@@ -26,18 +26,21 @@ Route::resource('choix', 'ChoixController');
 
 Route::post('role.setRole','RoleController@setRole')->name('setRole')->middleware('auth','role:Admin');
 
-Route::get('/profiles', 'ProfileController@index')->name('index')->middleware('auth','role:Admin');
+Route::get('/profiles', 'ProfileController@index')->name('index')->middleware('auth','role:Admin'); // check
 
-Route::get('/profiles/{id}', 'ProfileController@show2')->middleware('auth')->name('show');
-Route::get('/edit', 'ProfileController@edit')->middleware('auth')->name('edit');
 
-Route::get('/quiz', 'QuizController@index')->name('quiz');
-Route::get('/quiz/show/{id}', 'QuizController@show')->name('showQuiz');
-Route::get('quiz/edit/{id}', 'QuizController@edit')->name('editQuiz');
-Route::get('/quiz/createQuiz', 'QuizController@create')->name('createQuiz');
+Route::get('/quiz', 'QuizController@index')->name('quiz'); //check
+Route::get('/quiz/show/{id}', 'QuizController@show')->name('showQuiz'); // faire un if
 
-Route::get('/quiz/createQuest', 'QuestionController@create')->name('createQuest');
-Route::post('/quiz/edit/{id}', 'QuizController@update');
-Route::get('/quiz/deleteQuest/{id}', 'QuizController@destroy')->name('destroyQuiz');
+Route::get('/quiz/createQuest', 'QuestionController@create')->name('createQuest'); // Interdit public
+Route::post('/quiz/edit/{id}', 'QuizController@update'); //what
+Route::get('/quiz/createQuiz', 'QuizController@create')->name('createQuiz'); // what
+Route::get('/quiz/deleteQuest/{id}', 'QuizController@destroy')->name('destroyQuiz'); // Interdit public
 
-Route::get('/quiz/categorie/{theme}', 'QuizController@categorie')->name('categorieQuiz');
+Route::get('/quiz/categorie/{theme}', 'QuizController@categorie')->name('categorieQuiz'); // check
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/profiles/{id}', 'ProfileController@show2');
+    Route::get('/edit', 'ProfileController@edit');
+    Route::get('quiz/edit/{id}', 'QuizController@edit')->name('editQuiz');
+});
