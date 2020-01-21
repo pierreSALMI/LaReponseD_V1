@@ -19,10 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('profile', 'ProfileController');
-Route::resource('quiz', 'QuizController');
-Route::resource('question', 'QuestionController');
-Route::resource('choix', 'ChoixController');
+Route::post('quiz/results', 'QuizController@verify')->name('verify');
 
 Route::post('role.setRole','RoleController@setRole')->name('setRole')->middleware('auth','role:Admin');
 
@@ -44,3 +41,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/edit', 'ProfileController@edit');
     Route::get('quiz/edit/{id}', 'QuizController@edit')->name('editQuiz');
 });
+Route::get('/quiz/categorie/{theme}', 'QuizController@categorie')->name('categorieQuiz');
+
+Route::resource('profile', 'ProfileController');
+Route::resource('quiz', 'QuizController');
+Route::resource('question', 'QuestionController');
+Route::resource('choix', 'ChoixController');

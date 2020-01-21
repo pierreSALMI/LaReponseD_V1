@@ -69,7 +69,7 @@ class ChoixController extends Controller
         if ($_POST['action'] == 'again') {
             return view('quizBlade.question.create', ['quiz' => $quiz]);
         } else if ($_POST['action'] == 'end') {
-            return redirect('home')->with('success','Bravo, vous avez crÃ©Ã© votre quiz !');
+            return redirect('home')->with('success','Bravo, vous avez créé votre quiz !');
         }
     }
 

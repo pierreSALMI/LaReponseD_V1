@@ -25,76 +25,39 @@
                 </div>
 
                 <div class="card-body">
-                    <form method="post">
+                    <form method="post" action="{{ route('verify',['reponses'=>'$reponses']) }}">
+                        @csrf
+                        <?php $quest = 0;
+                            $reponses = [];
+                        ?>
+
                         @foreach($quiz->questions as $question)
+                        <?php
+                        $reponses2 = [$question->choix->choix0,$question->choix->choix1,$question->choix->choix2,$question->choix->choix3];
+                        ?>
+                        <h5>{{$question->question}}</h5>
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <td>Question :</td>
-                                    <td>RÃ©ponse 1</td>
-                                    <td>RÃ©ponse 2</td>
-                                    <td>RÃ©ponse 3</td>
-                                    <td>RÃ©ponse 4</td>
+                                    <td>Réponse 1</td>
+                                    <td>Réponse 2</td>
+                                    <td>Réponse 3</td>
+                                    <td>Réponse 4</td>
                                 </tr>
                             </thead>
 
-                            <span hidden>{{ $random = random_int(0,3) }}</span>
-                            @if($random == 0)
-                                <tbody>
-                                    <tr>
-                                        <td>{{$question->question}}</td>
-                                        <td><input type="radio" name="choix0" value="{{$question->choix->choix0}}">{{$question->choix->choix0}}</td>
-                                        <td><input type="radio" name="choix1" value="{{$question->choix->choix1}}">{{$question->choix->choix1}}</td>
-                                        <td><input type="radio" name="choix2" value="{{$question->choix->choix2}}" >{{$question->choix->choix2}}</td>
-                                        <td><input type="radio" name="choix3" value="{{$question->choix->choix3}}">{{$question->choix->choix3}}</td>
-                                    </tr>
-                                </tbody>
-
-                            @elseif($random == 1)
-                                <tbody>
+                            <tbody>
                                 <tr>
-                                    <td>{{$question->question}}</td>
-                                    <td> <input type="radio" name="choix3" value="{{$question->choix->choix3}}"> {{$question->choix->choix3}}</td>
-                                    <td> <input type="radio" name="choix0" value="{{$question->choix->choix0}}"> {{$question->choix->choix0}}</td>
-                                    <td> <input type="radio" name="choix2" value="{{$question->choix->choix2}}"> {{$question->choix->choix2}}</td>
-                                    <td> <input type="radio" name="choix1" value="{{$question->choix->choix1}}"> {{$question->choix->choix1}}</td>
+                                    @foreach($reponses as $reponse)
+                                        <td>
+                                        <input type="radio" value="{{$reponse}}" name='<?php echo $quest;?>'>
+                                        <label for='<?php echo $quest;?>'>{{$reponse}}</label>
+                                        </td>
+                                    @endforeach
                                 </tr>
-                                </tbody>
-
-                            @elseif($random == 2)
-                                <tbody>
-                                <tr>
-                                    <td>{{$question->question}}</td>
-                                    <td> <input type="radio" name="choix2" value="{{$question->choix->choix2}}"> {{$question->choix->choix2}}</td>
-                                    <td> <input type="radio" name="choix3" value="{{$question->choix->choix3}}"> {{$question->choix->choix3}}</td>
-                                    <td> <input type="radio" name="choix0" value="{{$question->choix->choix0}}"> {{$question->choix->choix0}}</td>
-                                    <td> <input type="radio" name="choix1" value="{{$question->choix->choix1}}"> {{$question->choix->choix1}}</td>
-                                </tr>
-                                </tbody>
-
-                            @elseif($random == 3)
-                                <tbody>
-                                <tr>
-                                    <td>{{$question->question}}</td>
-                                    <td> <input type="radio" name="choix0" value="{{$question->choix->choix0}}"> {{$question->choix->choix0}}</td>
-                                    <td> <input type="radio" name="choix2" value="{{$question->choix->choix2}}"> {{$question->choix->choix2}}</td>
-                                    <td> <input type="radio" name="choix3" value="{{$question->choix->choix3}}"> {{$question->choix->choix3}}</td>
-                                    <td> <input type="radio" name="choix1" value="{{$question->choix->choix1}}"> {{$question->choix->choix1}}</td>
-                                </tr>
-                                </tbody>
-                            @else
-                                <tbody>
-                                <tr>
-                                    <td>{{$question->question}}</td>
-                                    <td> <input type="radio" name="choix3" value="{{$question->choix->choix3}}"> {{$question->choix->choix3}}</td>
-                                    <td> <input type="radio" name="choix2" value="{{$question->choix->choix2}}"> {{$question->choix->choix2}}</td>
-                                    <td> <input type="radio" name="choix1" value="{{$question->choix->choix1}}"> {{$question->choix->choix1}}</td>
-                                    <td> <input type="radio" name="choix0" value="{{$question->choix->choix0}}"> {{$question->choix->choix0}}</td>
-                                </tr>
-                                </tbody>
-                            @endif
-
+                            </tbody>
                         </table>
+                        <?php $quest += 1;?>
                         @endforeach
                         <button type="submit" class="btn btn-primary" name="action">Valider</button>
                     </form>
