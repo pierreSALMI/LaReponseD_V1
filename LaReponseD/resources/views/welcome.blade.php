@@ -3,13 +3,13 @@
 @section('content')
     <div class="content">
         <div class="title m-b-md">
-            La RÃ©ponse D
+            La Réponse D
         </div>
         <section class="section-content">
             <div class="container">
 
                 <header class="section-heading">
-                    <h3 class="section-title mb-3">CatÃ©gorie</h3>
+                    <h3 class="section-title mb-3">Catégorie</h3>
                 </header><!-- sect-heading -->
 
 

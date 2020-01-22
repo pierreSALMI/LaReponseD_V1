@@ -22,6 +22,7 @@ class Quiz extends Model
     protected $fillable = [
         'titre',
         'theme',
+        'joues',
     ];
 
     public static function boot() {

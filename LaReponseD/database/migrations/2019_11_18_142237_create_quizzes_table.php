@@ -17,6 +17,7 @@ class CreateQuizzesTable extends Migration
             $table->bigIncrements('id');
             $table->string('titre');
             $table->string('theme');
+            $table->bigInteger('joues')->default(0);
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

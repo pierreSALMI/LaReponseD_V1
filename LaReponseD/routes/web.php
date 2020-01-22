@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('/');
 
 Auth::routes();
 
@@ -39,10 +39,11 @@ Route::get('/quiz/categorie/{theme}', 'QuizController@categorie')->name('categor
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/profiles/{id}', 'ProfileController@show2');
-    Route::get('/edit', 'ProfileController@edit');
-    Route::get('quiz/edit/{id}', 'QuizController@edit')->name('editQuiz');
+    Route::get('/edit', 'ProfileController@edit')->name('edit');
+    Route::get('/quiz/edit/{id}', 'QuizController@edit')->name('editQuiz');
 });
 Route::get('/quiz/categorie/{theme}', 'QuizController@categorie')->name('categorieQuiz');
+Route::get('/quiz/all','QuizController@allQuizs')->name('allQuizs');
 
 Route::resource('profile', 'ProfileController');
 Route::resource('quiz', 'QuizController');

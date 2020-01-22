@@ -170,177 +170,119 @@
                 <!-- sidebar-header  -->
                 <div class="sidebar-menu">
                     <ul>
-                    <li class="header-menu">
-                        <span>General</span>
-                    </li>
-                    <li class="sidebar-dropdown">
-                        <a href="#">
-                        <i class="fa fa-tachometer-alt"></i>
-                        <span>Dashboard</span>
-                        </a>
-                        <div class="sidebar-submenu">
-                        <ul>
-                            <li>
-                            <a href="#">Dashboard 1
-                                <span class="badge badge-pill badge-success">Pro</span>
+                        <li class="header-menu">
+                            <span>General</span>
+                        </li>
+                        <li class="">
+                            <a href="{{ route('home') }}">
+                            <i class="fa fa-tachometer-alt"></i>
+                            <span>Home</span>
                             </a>
-                            </li>
-                        </ul>
-                        </div>
-                    </li>
-                    <li class="sidebar-dropdown">
-                        <a href="#">
-                        <i class="fas fa-user-friends"></i>
-                        <span>Profile</span>
-                        </a>
-                        <div class="sidebar-submenu">
-                        <ul>
-                            <li>
-                            @hasrole('Admin')
-                            <a class="dropdown-item fas fa-user" href="{{ route('index') }}"
-                                onclick="event.preventDefault();
-                                    document.getElementById('index-form').submit();">
-                                {{ __('All Profiles') }}
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                            <i class="fas fa-user-friends"></i>
+                            <span>Profile</span>
                             </a>
-                            <form id="index-form" action="{{ route('index') }}" method="GET" style="display: none;">
-                                @csrf
-                            </form>
-                            @endhasrole
-                            </li>
-                            <li>
-                            <a class="dropdown-item" href="{{ url('profiles/'.Auth::id()) }}"
-                                onclick="event.preventDefault();
-                                document.getElementById('show-form').submit();">
-                                {{ __('Profile') }}
+                            <div class="sidebar-submenu">
+                            <ul>
+                                <li>
+                                @hasrole('Admin')
+                                <a class="dropdown-item fas fa-user" href="{{ route('index') }}"
+                                    onclick="event.preventDefault();
+                                        document.getElementById('index-form').submit();">
+                                    {{ __('All Profiles') }}
+                                </a>
+                                <form id="index-form" action="{{ route('index') }}" method="GET" style="display: none;">
+                                    @csrf
+                                </form>
+                                @endhasrole
+                                </li>
+                                <li>
+                                <a class="dropdown-item" href="{{ url('profiles/'.Auth::id()) }}"
+                                    onclick="event.preventDefault();
+                                    document.getElementById('show-form').submit();">
+                                    {{ __('Profile') }}
+                                </a>
+                                <form id="show-form" action="{{ url('profiles/'.Auth::id()) }}" method="GET" style="display: none;">
+                                    @csrf
+                                </form>
+                                </li>
+                                <li>
+                                <a class="dropdown-item" href="{{ route('edit') }}"
+                                    onclick="event.preventDefault();
+                                        document.getElementById('edit-form').submit();">
+                                    {{ __('Edit Profile') }}
+                                </a>
+                                <form id="edit-form" action="{{ route('edit') }}" method="EDIT" style="display: none;">
+                                    @csrf
+                                </form>
+                                </li>
+                            </ul>
+                            </div>
+                        </li>
+                        <li class="header-menu">
+                            <span>Quizz</span>
+                        </li>
+                        <li class="">
+                            <a href="{{ route('allQuizs') }}">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Tous les quizz</span>
                             </a>
-                            <form id="show-form" action="{{ url('profiles/'.Auth::id()) }}" method="GET" style="display: none;">
-                                @csrf
-                            </form>
-                            </li>
-                            <li>
-                            <a class="dropdown-item" href="{{ route('edit') }}"
-                                onclick="event.preventDefault();
-                                    document.getElementById('edit-form').submit();">
-                                {{ __('Edit Profile') }}
+                        </li>
+                        <li class="">
+                            <a href="{{ route('/') }}">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Categories</span>
                             </a>
-                            <form id="edit-form" action="{{ route('edit') }}" method="EDIT" style="display: none;">
-                                @csrf
-                            </form>
-                            </li>
-                        </ul>
-                        </div>
-                    </li>
-                    <li class="sidebar-dropdown">
-                        <a href="#">
-                        <i class="far fa-gem"></i>
-                        <span>Components</span>
-                        </a>
-                        <div class="sidebar-submenu">
-                        <ul>
-                            <li>
-                            <a href="#">General</a>
-                            </li>
-                            <li>
-                            <a href="#">Panels</a>
-                            </li>
-                            <li>
-                            <a href="#">Tables</a>
-                            </li>
-                            <li>
-                            <a href="#">Icons</a>
-                            </li>
-                            <li>
-                            <a href="#">Forms</a>
-                            </li>
-                        </ul>
-                        </div>
-                    </li>
-                    <li class="sidebar-dropdown">
-                        <a href="#">
-                        <i class="fa fa-chart-line"></i>
-                        <span>Charts</span>
-                        </a>
-                        <div class="sidebar-submenu">
-                        <ul>
-                            <li>
-                            <a href="#">Pie chart</a>
-                            </li>
-                            <li>
-                            <a href="#">Line chart</a>
-                            </li>
-                            <li>
-                            <a href="#">Bar chart</a>
-                            </li>
-                            <li>
-                            <a href="#">Histogram</a>
-                            </li>
-                        </ul>
-                        </div>
-                    </li>
-                    <li class="sidebar-dropdown">
-                        <a href="#">
-                        <i class="fa fa-globe"></i>
-                        <span>Maps</span>
-                        </a>
-                        <div class="sidebar-submenu">
-                        <ul>
-                            <li>
-                            <a href="#">Google maps</a>
-                            </li>
-                            <li>
-                            <a href="#">Open street map</a>
-                            </li>
-                        </ul>
-                        </div>
-                    </li>
-                    <li class="header-menu">
-                        <span>Extra</span>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <i class="fa fa-book"></i>
-                        <span>Documentation</span>
-                        <span class="badge badge-pill badge-primary">Beta</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <i class="fa fa-calendar"></i>
-                        <span>Calendar</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <i class="fa fa-folder"></i>
-                        <span>Examples</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <i class="fas fa-moon"></i>
-                        <label class="switch">
-                            <input id="dark-mode-toggle" type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
-                        </a>
+                        </li>
+                        <?php
+                            $categories = DB::table('quiz')->select('theme')->distinct()->get();
+                            $array = json_decode(json_encode($categories), true);
+                            foreach ($array as $oui) {?>
+                                <li class="">
+                                    <a href="{{ url('/quiz/categorie/'.$oui['theme']) }}">
+                                    <i class="fas fa-question-circle"></i>
+                                    <span class="badge badge-pill badge-success notification">
+                                        <?php
+                                            $count = DB::table('quiz')->select(DB::raw('count(*) as count'))->groupBy('theme')->where('theme','LIKE',$oui['theme'])->get();
+                                            $count = json_decode(json_encode($count), true);
+                                            echo $count[0]["count"];
+                                        ?>
+                                    </span>
+                                    <span>{{ $oui["theme"] }}</span>
+                                    </a>
+                                </li>
+                            <?php
+                            }
+                        ?>
+                        <li class="header-menu">
+                            <span>Créer son quizz</span>
+                        </li>
+                        <li class="">
+                            <a href="{{ route('createQuiz') }}">
+                            <i class="fas fa-plus"></i>
+                            <span>Ici</span>
+                            </a>
+                        </li>
+                        <li class="header-menu">
+                            <span>DarkMode</span>
+                        </li>
+                        <li>
+                            <a href="#">
+                            <i class="fas fa-moon"></i>
+                            <label class="switch">
+                                <input id="dark-mode-toggle" type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <!-- sidebar-menu  -->
                 </div>
                 <!-- sidebar-content  -->
                 <div class="sidebar-footer">
-                <a href="#">
-                    <i class="fa fa-bell"></i>
-                    <span class="badge badge-pill badge-warning notification">3</span>
-                </a>
-                <a href="#">
-                    <i class="fa fa-envelope"></i>
-                    <span class="badge badge-pill badge-success notification">7</span>
-                </a>
-                <a href="#">
-                    <i class="fa fa-cog"></i>
-                    <span class="badge-sonar"></span>
-                </a>
                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <i class="fa fa-power-off"></i>
                 </a>

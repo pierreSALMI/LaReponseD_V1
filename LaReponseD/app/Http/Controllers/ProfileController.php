@@ -26,7 +26,11 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(){
-        return view('profileBlade.create');
+        if (Profile::where('user_id', '=', Auth::user()->id)) {
+            return redirect('/home')->with('alert', 'Vous avez déjà un profile :(');
+        } else {
+            return view('profileBlade.create');
+        }
     }
 
     /**
@@ -61,7 +65,7 @@ class ProfileController extends Controller
 
         $newProfile->save();
 
-        return redirect('/home')->with('success', 'Profil mis Ã  jour!');
+        return redirect('/home')->with('success', 'Profil mis à jour!');
     }
 
     /**
@@ -114,7 +118,7 @@ class ProfileController extends Controller
         $profile->address = $request->get('address');
         $profile->save();
 
-        return redirect('/show')->with('success', 'Profil mis Ã  jour!');
+        return redirect('/show')->with('success', 'Profil mis à jour!');
     }
 
     /**

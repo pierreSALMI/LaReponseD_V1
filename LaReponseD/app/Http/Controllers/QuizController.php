@@ -26,6 +26,12 @@ class QuizController extends Controller
         return view('quizBlade.index', ['quizs' => Quiz::all()->sortByDesc('created_at')]);
     }
 
+    public function allQuizs()
+    {
+        $quizs = Quiz::paginate(15);
+        return view('quizBlade.indexall', compact('quizs'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -66,7 +72,6 @@ class QuizController extends Controller
      */
     public function show($id)
     {
-        //$questions = Question::where('quiz_id', $quiz_id)->get();
         $quiz = Quiz::with('questions.choix')->find($id);
         return view('quizBlade.show', ['quiz' => $quiz]);
     }
@@ -149,6 +154,10 @@ class QuizController extends Controller
                 $points += 1;
             }
         }
+
+        $quiz = Quiz::find($request->quiz_id);
+        $quiz->joues += 1;
+        $quiz->save();
 
         return view('quizBlade.results', ['points' => $points, 'points_max' => $points_max]);
     }
