@@ -31,6 +31,7 @@
                                         <td>Titre</td>
                                         <td>theme</td>
                                         <td>Créateur</td>
+                                        <td>Joué</td>
                                     </tr>
                                     </thead>
                             </div>
@@ -42,6 +43,7 @@
                                                 <td>{{$quiz->titre}}</td>
                                                 <td>{{$quiz->theme}}</td>
                                                 <td>{{ DB::table('users')->where('id', $quiz->user_id)->first()->name}}</td>
+                                                <td>{{ $quiz->joues }}</td>
                                                 <td><button type="button" class="btn btn-primary float-right" onclick="window.location='{{ url('quiz/show/'.$quiz->id) }}'">Jouer</button></td>
                                             </tr>
                                         @endforeach

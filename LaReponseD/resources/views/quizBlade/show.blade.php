@@ -29,11 +29,12 @@
                 ?>
 
                 <div class="card-body">
-                    <form method="post" action="{{ route('verify', ['reponses' => 'reponses']) }}">
+                    <form method="post" action="{{ route('verify', ['reponses' => 'reponses', 'quiz_id' => $quiz->id]) }}">
                         @csrf
                         @foreach($quiz->questions as $question)
                         <?php
                         $reponses2 = [$question->choix->choix0,$question->choix->choix1,$question->choix->choix2,$question->choix->choix3];
+                        shuffle($reponses2);
                         ?>
                         <h5>{{$question->question}}</h5>
                         <input type="hidden" name="reponses[]" value='{{$question->choix->choix0}}'>
@@ -49,12 +50,14 @@
 
                             <tbody>
                                 <tr>
+
                                     @foreach($reponses2 as $reponse)
                                         <td>
                                         <input type="radio" value="{{$reponse}}" name='<?php echo $quest;?>'>
                                         <label for='<?php echo $quest;?>'>{{$reponse}}</label>
                                         </td>
                                     @endforeach
+
                                 </tr>
                             </tbody>
                         </table>
