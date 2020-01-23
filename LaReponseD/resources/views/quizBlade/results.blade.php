@@ -11,11 +11,12 @@
         @endif
             <div class="card">
                 <div class="card-header">
-                    <h2 class="float-left">Dashboard</h2>
+                    <h2 class="float-left">Score</h2>
                 </div>
 
                 <div class="card-body">
-                    <p>{{$points}}/{{$points_max}}</p>
+                    <h3 class="text-center">Bien joué</h3>
+                    <p>Vous avez un score de : <span style="font-weight:bold;">{{ $points }}/{{ $points_max }}</span></p>
                 </div>
             </div>
         </div>
