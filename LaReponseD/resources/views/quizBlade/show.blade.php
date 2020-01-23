@@ -22,6 +22,10 @@
                     @if(Auth::user()->id == $quiz->user_id)
                         <button type="button" class="btn btn-primary float-right" onclick="window.location='{{ url('quiz/edit/'.$quiz->id) }}'">Modifier le quiz</button>
                     @endif
+                    @hasrole('Admin')
+                        <button type="button" class="btn btn-primary float-right" onclick="window.location='{{ url('quiz/edit/'.$quiz->id) }}'">Modifier le quiz</button>
+                    @endhasrole
+
                 </div>
 
                 <?php
@@ -41,10 +45,10 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <td>Réponse 1</td>
-                                    <td>Réponse 2</td>
-                                    <td>Réponse 3</td>
-                                    <td>Réponse 4</td>
+                                    <td>Rï¿½ponse 1</td>
+                                    <td>Rï¿½ponse 2</td>
+                                    <td>Rï¿½ponse 3</td>
+                                    <td>Rï¿½ponse 4</td>
                                 </tr>
                             </thead>
 
