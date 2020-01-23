@@ -19,6 +19,6 @@ Le projet peut être récupéré par diverses méthodes :
 
 ## Installation
 
-Une fois le projet téléchargé sous la forme d'un dossier compressé, il vous suffira de le décompresser dans le dossier que vous souhaitez être récepteur du projet. Rendez-vous dans le dossier LaReponseD et ouvrez une interface en ligne de commande (si ce n'est pas déjà fait). 
+Une fois le projet téléchargé sous la forme d'un dossier compressé, il vous suffira de le décompresser dans le dossier que vous souhaitez être récepteur du projet. Rendez-vous dans le dossier LaReponseD et ouvrez une interface en ligne de commande (si ce n'est pas déjà fait). Il faudra, afin d'utiliser le projet, exécuter la commande `composer install` afin d'installer les paquets utilisés pour le bon fonctionnement du site. Pour que celui-ci fonctionne, il faut aussi adapter les informations de connexion à la base de données dans le fichier `.env` du projet.
 
 ## Utilisation
