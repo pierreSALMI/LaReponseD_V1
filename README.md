@@ -23,7 +23,7 @@ Une fois le projet téléchargé sous la forme d'un dossier compressé, il vous 
 
 ## Utilisation
 
-Le site propose à tout les membres inscrit de pouvoir jouer à n'importe qu'elle Quiz fait par la communauté.
+Le site propose à tous les membres inscrit de pouvoir jouer à n'importe qu'elle Quiz fait par la communauté.
 
 ### Utilisateur
 
