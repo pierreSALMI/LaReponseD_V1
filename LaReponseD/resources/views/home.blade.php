@@ -17,7 +17,7 @@
             <div class="card">
                 <div class="card-header">
                     <h2 class="float-left">Dashboard</h2>
-                    <button type="button" class="btn btn-primary float-right" onclick="window.location='{{ url('quiz/create') }}'">Créer un quiz</button>
+                    <button type="button" class="btn btn-primary float-right" onclick="window.location='{{ url('quiz/create') }}'">CrÃ©er un quiz</button>
                 </div>
 
                 <div class="card-body">
@@ -29,12 +29,12 @@
 
                     <p>Hey, re ! :)</p>
 
-                    <h5>Tes quizs ont été joués :</h5>
+                    <h5>Tes quizs ont Ã©tÃ© jouÃ©s :</h5>
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <td>Quizz :</td>
-                                <td>Quantité</td>
+                                <td>QuantitÃ©</td>
                             </tr>
                         </thead>
                         <tbody>
