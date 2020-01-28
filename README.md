@@ -19,6 +19,17 @@ Le projet peut être récupéré par diverses méthodes :
 
 ## Installation
 
-Une fois le projet téléchargé sous la forme d'un dossier compressé, il vous suffira de le décompresser dans le dossier que vous souhaitez être récepteur du projet. Rendez-vous dans le dossier LaReponseD et ouvrez une interface en ligne de commande (si ce n'est pas déjà fait). Il faudra, afin d'utiliser le projet, exécuter la commande `composer install` afin d'installer les paquets utilisés pour le bon fonctionnement du site. Pour que celui-ci fonctionne, il faut aussi adapter les informations de connexion à la base de données dans le fichier `.env` du projet.
+Une fois le projet téléchargé sous la forme d'un dossier compressé, il vous suffira de le décompresser dans le dossier que vous souhaitez être récepteur du projet. Rendez-vous dans le dossier LaReponseD et ouvrez une interface en ligne de commande (si ce n'est pas déjà fait). Il faudra, afin d'utiliser le projet, exécuter la commande `composer install` afin d'installer les paquets utilisés pour le bon fonctionnement du site. Pour que celui-ci fonctionne, nous tapons les commandes `npm install`, `run dev`, `php artisan migrate`, `php artisan db:seed`, il faut aussi adapter les informations de connexion à la base de données dans le fichier `.env` du projet.
 
 ## Utilisation
+
+Le site propose à tous les membres inscrit de pouvoir jouer à n'importe qu'elle Quiz fait par la communauté.
+
+### Utilisateur
+
+En t'en qu'utilisateur, vous pouvez Créer, Supprimer, et Modifier vos Quiz.
+Votre profile est aussi modifiable.
+
+### Administrateur
+
+Les administrateurs ont les mêmes fonctionnalités que les utilisateurs mais peuvent en plus Supprimer, ou Modifier un Quiz et accéder à tous les profils utilisateurs.
